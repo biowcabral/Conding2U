@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Beleza Pura — Estética Avançada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>`n    /* Ocultar back-btn quando em iframe */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --pink: #f9a8c9;
+      --rose: #e11d48;
+      --dark: #1a0a0f;
+      --cream: #fff8f5;
+      --text: #3d1a2a;
+      --muted: #8b6070;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); }
+
+    /* BACK BUTTON */
+    .back-btn {
+      position: fixed; top: 20px; left: 20px; z-index: 999;
+      display: flex; align-items: center; gap: 8px;
+      background: white; color: var(--rose);
+      padding: 10px 18px; border-radius: 99px;
+      font-size: 13px; font-weight: 600;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.18); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; background: rgba(255,248,245,0.9);
+      backdrop-filter: blur(12px); padding: 16px 40px;
+      display: flex; justify-content: space-between; align-items: center; z-index: 100;
+      border-bottom: 1px solid rgba(249,168,201,0.3);
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--rose); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta {
+      background: var(--rose); color: white; padding: 10px 24px;
+      border-radius: 99px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      background: linear-gradient(135deg, #fff0f5 0%, #ffe4ef 50%, #ffd6e8 100%);
+      padding: 100px 40px 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '✦'; position: absolute; top: 15%; right: 10%;
+      font-size: 120px; opacity: 0.06; color: var(--rose);
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(225,29,72,0.08) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(225,29,72,0.1); color: var(--rose);
+      padding: 6px 16px; border-radius: 99px; font-size: 13px; font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-tag span { width: 6px; height: 6px; background: var(--rose); border-radius: 50%; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px,5vw,62px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    h1 em { font-style: italic; color: var(--rose); }
+    .hero-sub { font-size: 18px; color: var(--muted); line-height: 1.7; margin-bottom: 36px; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--rose); color: white; padding: 16px 36px;
+      border-radius: 99px; font-size: 16px; font-weight: 600;
+      text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 30px rgba(225,29,72,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(225,29,72,0.45); }
+    .btn-ghost { border: 2px solid var(--rose); color: var(--rose); padding: 14px 32px; border-radius: 99px; font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .btn-ghost:hover { background: var(--rose); color: white; }
+    .hero-stats { display: flex; gap: 32px; margin-top: 40px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 900; color: var(--rose); }
+    .stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-img-card {
+      background: white; border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(225,29,72,0.15);
+      overflow: hidden; aspect-ratio: 4/5;
+      background: linear-gradient(160deg, #ffe4ef 0%, #ffc2d4 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 80px;
+    }
+    .float-badge {
+      position: absolute; bottom: 30px; left: -20px;
+      background: white; border-radius: 16px; padding: 16px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      display: flex; gap: 12px; align-items: center;
+    }
+    .badge-icon { font-size: 28px; }
+    .badge-text strong { display: block; font-size: 18px; color: var(--rose); font-weight: 700; }
+    .badge-text span { font-size: 12px; color: var(--muted); }
+
+    /* RESULTS BANNER */
+    .results-banner {
+      background: var(--rose); color: white;
+      padding: 20px 40px; text-align: center;
+      font-size: 15px; font-weight: 500;
+    }
+    .results-banner strong { font-size: 18px; }
+
+    /* SERVICES */
+    .section { padding: 100px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { color: var(--rose); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,46px); font-weight: 900; margin-bottom: 16px; }
+    .section-sub { color: var(--muted); font-size: 17px; max-width: 560px; line-height: 1.7; margin-bottom: 60px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      background: white; border-radius: 20px; padding: 36px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(249,168,201,0.2);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(225,29,72,0.12); }
+    .service-icon { font-size: 40px; margin-bottom: 20px; }
+    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px; }
+    .service-card p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .service-price { color: var(--rose); font-weight: 700; font-size: 15px; }
+
+    /* BEFORE/AFTER */
+    .ba-section { background: var(--dark); padding: 100px 40px; }
+    .ba-inner { max-width: 1100px; margin: 0 auto; }
+    .ba-inner .section-title { color: white; }
+    .ba-inner .section-tag { color: var(--pink); }
+    .ba-inner .section-sub { color: rgba(255,255,255,0.5); }
+    .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .ba-card {
+      border-radius: 20px; overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(249,168,201,0.15);
+    }
+    .ba-top { padding: 28px; text-align: center; }
+    .ba-top span { font-size: 50px; }
+    .ba-info { padding: 20px 28px 28px; }
+    .ba-info h4 { color: white; font-size: 17px; margin-bottom: 6px; }
+    .ba-info p { color: rgba(255,255,255,0.4); font-size: 14px; }
+    .ba-result { color: var(--pink); font-size: 22px; font-weight: 700; margin-top: 8px; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: #fff0f5; padding: 100px 40px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+    .test-card {
+      background: white; border-radius: 20px; padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .stars { color: #fbbf24; font-size: 18px; margin-bottom: 16px; }
+    .test-card p { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 24px; font-style: italic; }
+    .test-author { display: flex; align-items: center; gap: 12px; }
+    .author-av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #ffc2d4, #e11d48); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .author-info strong { display: block; font-size: 15px; }
+    .author-info span { font-size: 13px; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, var(--rose), #9f1239);
+      padding: 100px 40px; text-align: center; color: white;
+    }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px,4vw,52px); font-weight: 900; margin-bottom: 20px; }
+    .cta-section p { font-size: 18px; opacity: 0.8; margin-bottom: 40px; }
+    .btn-white { background: white; color: var(--rose); padding: 18px 48px; border-radius: 99px; font-size: 17px; font-weight: 700; text-decoration: none; transition: transform 0.2s; display: inline-block; }
+    .btn-white:hover { transform: scale(1.05); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); text-align: center; padding: 40px; font-size: 14px; }
+    footer strong { color: var(--pink); }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero-inner, .services-grid, .ba-grid, .test-grid { grid-template-columns: 1fr; }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+      .hero-stats { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../index.html#portfolio" class="back-btn">← Voltar ao Portfólio</a>
+
+  <nav>
+    <div class="nav-logo">Beleza Pura</div>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </div>
+    <a href="#agendar" class="nav-cta">Agendar Avaliação</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag"><span></span> Clínica Premiada — SP</div>
+        <h1>Sua <em>beleza</em>, nossa maior obra-prima</h1>
+        <p class="hero-sub">Tratamentos estéticos avançados com tecnologia de ponta e a equipe mais qualificada de São Paulo. Resultado visível desde a primeira sessão.</p>
+        <div class="hero-btns">
+          <a href="#agendar" class="btn-primary">Agendar Avaliação Grátis</a>
+          <a href="#servicos" class="btn-ghost">Ver Tratamentos</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">+4.200</div>
+            <div class="stat-label">Clientes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Satisfação</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">+340%</div>
+            <div class="stat-label">Agendamentos</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img-wrap">
+        <div class="hero-img-card">🌸</div>
+        <div class="float-badge">
+          <div class="badge-icon">✅</div>
+          <div class="badge-text">
+            <strong>+340%</strong>
+            <span>mais agendamentos em 30 dias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="results-banner">
+    ✨ <strong>Resultado garantido</strong> — Mais de 4.200 clientes transformadas em 8 anos de história
+  </div>
+
+  <section class="section" id="servicos">
+    <div class="section-inner">
+      <p class="section-tag">Nossos Tratamentos</p>
+      <h2 class="section-title">Tecnologia que transforma</h2>
+      <p class="section-sub">Cada procedimento é personalizado para o seu biótipo e objetivo. Sem padrão, sem improvisação.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">💎</div>
+          <h3>Harmonização Facial</h3>
+          <p>Preenchimento e botox aplicados por especialistas certificados. Resultado natural e preciso.</p>
+          <div class="service-price">A partir de R$ 890</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Ultrassom Microfocado</h3>
+          <p>Lifting não cirúrgico com tecnologia HIFU. Rejuvenescimento profundo sem agulhas.</p>
+          <div class="service-price">A partir de R$ 1.200</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌟</div>
+          <h3>Laser CO₂ Fracionado</h3>
+          <p>Renovação celular intensa para manchas, cicatrizes e envelhecimento. 1 sessão = meses de resultado.</p>
+          <div class="service-price">A partir de R$ 1.500</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔮</div>
+          <h3>Radiofrequência</h3>
+          <p>Flacidez e celulite eliminadas com ondas térmicas que estimulam colágeno naturalmente.</p>
+          <div class="service-price">A partir de R$ 450</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌿</div>
+          <h3>Peeling Químico</h3>
+          <p>Renovação da pele com ácidos dermocosméticos. Manchas, poros e textura em 1 visita.</p>
+          <div class="service-price">A partir de R$ 380</div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>Limpeza de Pele Premium</h3>
+          <p>Protocolo exclusivo com extração profunda, máscaras ativas e finalização iluminadora.</p>
+          <div class="service-price">A partir de R$ 220</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ba-section" id="resultados">
+    <div class="ba-inner">
+      <p class="section-tag">Resultados Reais</p>
+      <h2 class="section-title">Transformações que falam por si</h2>
+      <p class="section-sub">Nossas clientes chegam com dúvidas e saem com autoestima renovada.</p>
+      <div class="ba-grid">
+        <div class="ba-card">
+          <div class="ba-top"><span>🌺</span></div>
+          <div class="ba-info">
+            <h4>Harmonização Facial</h4>
+            <p>Antes: traços apagados, sem contorno</p>
+            <div class="ba-result">Após 1 sessão → rosto estruturado</div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-top"><span>💫</span></div>
+          <div class="ba-info">
+            <h4>Laser Antienvelhecimento</h4>
+            <p>Antes: manchas e textura irregular</p>
+            <div class="ba-result">Após 3 sessões → pele 10 anos mais jovem</div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-top"><span>⭐</span></div>
+          <div class="ba-info">
+            <h4>Lifting HIFU</h4>
+            <p>Antes: flacidez e papada evidente</p>
+            <div class="ba-result">Após 2 sessões → contorno definido</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="depoimentos">
+    <div class="section-inner">
+      <p class="section-tag">Depoimentos</p>
+      <h2 class="section-title">O que nossas clientes dizem</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"Fiz harmonização e ficou absolutamente natural. Todo mundo percebeu a diferença mas ninguém sabia o que era diferente. Incrível!"</p>
+          <div class="test-author">
+            <div class="author-av">👩</div>
+            <div class="author-info">
+              <strong>Amanda Ferreira</strong>
+              <span>Harmonização Facial</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"Agenda cheia o mês todo. Nunca mais precisei me preocupar com captação de clientes desde que fiz o site com vocês."</p>
+          <div class="test-author">
+            <div class="author-av">👱</div>
+            <div class="author-info">
+              <strong>Dra. Carla Souza</strong>
+              <span>Proprietária da Clínica</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"Resultado do laser CO₂ foi surreal. As manchas que eu tinha há 6 anos desapareceram em 2 sessões. Me sinto outra pessoa."</p>
+          <div class="test-author">
+            <div class="author-av">🧑</div>
+            <div class="author-info">
+              <strong>Juliana Costa</strong>
+              <span>Laser Antienvelhecimento</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="agendar">
+    <h2>Pronta para se transformar?</h2>
+    <p>Avaliação gratuita com nossa especialista. Sem compromisso, sem pressão.</p>
+    <a href="#agendar" class="btn-white">Quero minha avaliação grátis 🌸</a>
+  </section>
+
+  <footer>
+    <p>© 2026 <strong>Beleza Pura Clínica Estética</strong> — São Paulo, SP</p>
+    <p style="margin-top:8px; font-size:12px;">Demo criado por <strong>conding2u</strong> — conding2u.com</p>
+  </footer>
+
+<script>if(window.self!==window.top){var b=document.querySelector(".back-btn");if(b)b.style.display="none";}</script>
+</body>
+</html>
