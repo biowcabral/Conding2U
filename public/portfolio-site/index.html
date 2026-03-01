@@ -6,6 +6,9 @@
     <meta name="description" content="Portfólio de Landing Pages e Automações — Transformamos negócios com design cinematográfico e tecnologia." />
     <title>conding2u — Landing Pages &amp; Automações</title>
 
+    <!-- Base path para Vercel/subpaths -->
+    <base href="/portfolio-site/" />
+
     <!-- Favicon inline -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='white'/><rect x='2' y='2' width='96' height='96' rx='20' fill='none' stroke='%23e5e7eb' stroke-width='2'/><text x='50' y='66' font-size='44' font-weight='900' font-family='Arial Black,Arial,sans-serif' text-anchor='middle'><tspan fill='%23111111'>c</tspan><tspan fill='%23f97316'>2u</tspan></text></svg>" />
 
@@ -23,6 +26,35 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Fallback: se GSAP não carregar, mostra o conteúdo mesmo assim -->
+    <style>
+      .no-gsap .reveal-up,
+      .no-gsap .reveal-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .no-gsap .hero-eyebrow,
+      .no-gsap #hero-sub,
+      .no-gsap #hero-ctas,
+      .no-gsap #hero-stats,
+      .no-gsap .scroll-indicator {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .no-gsap .hero-line span,
+      .no-gsap .hero-line em {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+    <script>
+      // Se GSAP não carregar em 3s, exibe o conteúdo de qualquer forma
+      var _gsapTimeout = setTimeout(function() {
+        document.documentElement.classList.add('no-gsap');
+      }, 3000);
+      window.__gsapReady = function() { clearTimeout(_gsapTimeout); };
+    </script>
   </head>
   <body>
 

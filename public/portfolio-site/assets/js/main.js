@@ -41,6 +41,7 @@
      ───────────────────────────────────────────────────── */
   function waitForGSAP(cb) {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      if (typeof window.__gsapReady === 'function') window.__gsapReady();
       cb();
     } else {
       setTimeout(() => waitForGSAP(cb), 60);
