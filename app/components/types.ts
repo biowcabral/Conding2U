@@ -44,7 +44,7 @@ export interface VariantConfig {
   statText: string;
 }
 
-export const WHATSAPP_NUMBER = '5511999999999';
+export const WHATSAPP_NUMBER = '12369993350';
 export const WHATSAPP_MESSAGE = encodeURIComponent(
   'Hi! I saw the Coding2U page and I\'d like to know more about getting my landing page built.'
 );
