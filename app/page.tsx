@@ -17,6 +17,7 @@ import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import SMSButton from './components/SMSButton';
 
 export default function Home() {
   return (
@@ -46,6 +47,7 @@ function PageContent() {
       <FinalCTA />
       <Footer />
       <WhatsAppButton />
+      <SMSButton />
       <VariantSwitcher />
     </main>
   );

@@ -49,3 +49,9 @@ export const WHATSAPP_MESSAGE = encodeURIComponent(
   'Hi! I saw the Coding2U page and I\'d like to know more about getting my landing page built.'
 );
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+
+export const SMS_NUMBER = '+12369993350';
+export const SMS_MESSAGE = encodeURIComponent(
+  'Hi! I saw the Coding2U page and I\'d like to know more about getting my landing page built.'
+);
+export const SMS_URL = `sms:${SMS_NUMBER}?body=${SMS_MESSAGE}`;
