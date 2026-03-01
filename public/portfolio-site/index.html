@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="pt-BR" data-lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Landing Pages e Automações — Transformamos negócios com design cinematográfico e tecnologia." />
+    <title>conding2u — Landing Pages &amp; Automações</title>
+
+    <!-- Favicon inline -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='white'/><rect x='2' y='2' width='96' height='96' rx='20' fill='none' stroke='%23e5e7eb' stroke-width='2'/><text x='50' y='66' font-size='44' font-weight='900' font-family='Arial Black,Arial,sans-serif' text-anchor='middle'><tspan fill='%23111111'>c</tspan><tspan fill='%23f97316'>2u</tspan></text></svg>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+    <!-- Scroll restoration — deve rodar antes de qualquer script defer -->
+    <script>if('scrollRestoration'in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js" defer></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+
+    <!-- ── NAVEGAÇÃO ── -->
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">
+        <img src="assets/images/logo.png" alt="conding2u" class="logo-img" />
+      </a>
+      <div class="nav-center">
+        <a href="#services" class="nav-link" data-pt="Serviços" data-en="Services">Serviços</a>
+        <a href="#portfolio" class="nav-link" data-pt="Portfólio" data-en="Portfolio">Portfólio</a>
+        <a href="#pricing" class="nav-link" data-pt="Preços" data-en="Pricing">Preços</a>
+        <a href="#contact" class="nav-link" data-pt="Contato" data-en="Contact">Contato</a>
+      </div>
+      <div class="nav-right">
+        <button id="lang-toggle" class="nav-lang" aria-label="Toggle language">PT / EN</button>
+        <a href="#contact" class="nav-cta magnetic" data-pt="Começar" data-en="Get Started">Começar</a>
+      </div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- ── MOBILE MENU ── -->
+    <div id="mobile-menu">
+      <a href="#services" class="mobile-link" data-pt="Serviços" data-en="Services">Serviços</a>
+      <a href="#portfolio" class="mobile-link" data-pt="Portfólio" data-en="Portfolio">Portfólio</a>
+      <a href="#pricing" class="mobile-link" data-pt="Preços" data-en="Pricing">Preços</a>
+      <a href="#contact" class="mobile-link" data-pt="Contato" data-en="Contact">Contato</a>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         HERÓI — ABERTURA CINEMATOGRÁFICA
+         ══════════════════════════════════════════ -->
+    <section id="hero">
+      <!-- Partículas de fundo -->
+      <div id="particles-container"></div>
+
+      <!-- Gradiente animado de fundo -->
+      <div class="hero-glow glow-1"></div>
+      <div class="hero-glow glow-2"></div>
+      <div class="hero-glow glow-3"></div>
+
+      <div class="hero-content">
+        <!-- Tagline superior -->
+        <div class="hero-eyebrow" id="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span data-pt="Design que Converte. Tecnologia que Liberta." data-en="Design that Converts. Technology that Frees.">Design que Converte. Tecnologia que Liberta.</span>
+        </div>
+
+        <!-- Título principal — dividido em chars para animação -->
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-line line-1">
+            <span data-pt="Sua Marca" data-en="Your Brand">Sua Marca</span>
+          </span>
+          <span class="hero-line line-2">
+            <span data-pt="Merece" data-en="Deserves">Merece</span>
+            <em data-pt=" uma Vitrine" data-en=" a Stage"> uma Vitrine</em>
+          </span>
+          <span class="hero-line line-3">
+            <span data-pt="à Altura." data-en="That Stands Out.">à Altura.</span>
+          </span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="hero-sub" id="hero-sub">
+          <span data-pt="Criamos landing pages que vendem e automações que trabalham enquanto você dorme." data-en="We build landing pages that sell and automations that work while you sleep.">
+            Criamos landing pages que vendem e automações que trabalham enquanto você dorme.
+          </span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas" id="hero-ctas">
+          <a href="#portfolio" class="btn-primary magnetic" data-pt="Ver Portfólio" data-en="View Portfolio">Ver Portfólio</a>
+          <a href="#contact" class="btn-ghost magnetic" data-pt="Falar Comigo" data-en="Let's Talk">Falar Comigo</a>
+        </div>
+
+        <!-- Stats rápidas -->
+        <div class="hero-stats" id="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" data-target="150">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label" data-pt="Projetos" data-en="Projects">Projetos</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="98">0</span><span class="stat-suffix">%</span>
+            <span class="stat-label" data-pt="Satisfação" data-en="Satisfaction">Satisfação</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="3">0</span><span class="stat-suffix">x</span>
+            <span class="stat-label" data-pt="Mais Conversões" data-en="More Conversions">Mais Conversões</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" id="scroll-indicator">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span data-pt="Rolar" data-en="Scroll">Rolar</span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         MANIFESTO — TEXTO PINADO COM SCROLL
+         ══════════════════════════════════════════ -->
+    <section id="manifesto">
+      <div class="manifesto-sticky">
+        <div class="manifesto-text" id="manifesto-text">
+          <p class="manifesto-p">
+            <span class="m-word" data-pt="No" data-en="In">No</span>
+            <span class="m-word" data-pt="mundo" data-en="the">mundo</span>
+            <span class="m-word" data-pt="digital," data-en="digital">digital,</span>
+            <span class="m-word accent-word" data-pt="atenção" data-en="attention">atenção</span>
+            <span class="m-word" data-pt="é" data-en="is">é</span>
+            <span class="m-word" data-pt="a" data-en="the">a</span>
+            <span class="m-word accent-word" data-pt="moeda" data-en="currency">moeda</span>
+            <span class="m-word" data-pt="mais" data-en="most">mais</span>
+            <span class="m-word" data-pt="valiosa." data-en="valuable.">valiosa.</span>
+            <span class="m-word" data-pt="Você" data-en="You">Você</span>
+            <span class="m-word" data-pt="tem" data-en="have">tem</span>
+            <span class="m-word accent-word" data-pt="3 segundos" data-en="3 seconds">3 segundos</span>
+            <span class="m-word" data-pt="para" data-en="to">para</span>
+            <span class="m-word" data-pt="convencer" data-en="convince">convencer</span>
+            <span class="m-word" data-pt="alguém" data-en="someone">alguém</span>
+            <span class="m-word" data-pt="a" data-en="to">a</span>
+            <span class="m-word" data-pt="ficar." data-en="stay.">ficar.</span>
+            <span class="m-word" data-pt="Nós" data-en="We">Nós</span>
+            <span class="m-word" data-pt="fazemos" data-en="make">fazemos</span>
+            <span class="m-word" data-pt="esses" data-en="those">esses</span>
+            <span class="m-word accent-word" data-pt="3 segundos" data-en="3 seconds">3 segundos</span>
+            <span class="m-word" data-pt="valerem" data-en="count.">valerem</span>
+            <span class="m-word accent-word" data-pt="uma venda." data-en="">uma venda.</span>
+          </p>
+        </div>
+        <!-- Fundo decorativo -->
+        <div class="manifesto-bg-text">CONDING</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SERVIÇOS — LANDING PAGES
+         ══════════════════════════════════════════ -->
+    <section id="services" class="services-section">
+      <div class="container">
+
+        <!-- Cabeçalho da seção -->
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-pt="O que fazemos" data-en="What we do">O que fazemos</span>
+          <h2 class="section-title" data-pt="Dois pilares.<br>Uma transformação." data-en="Two pillars.<br>One transformation.">
+            Dois pilares.<br>Uma transformação.
+          </h2>
+        </div>
+
+        <!-- ── PILAR 1: LANDING PAGES ── -->
+        <div class="service-pillar" id="pillar-lp">
+          <div class="pillar-header">
+            <div class="pillar-number">01</div>
+            <div class="pillar-meta reveal-up">
+              <h3 class="pillar-title" data-pt="Landing Pages" data-en="Landing Pages">Landing Pages</h3>
+              <p class="pillar-sub" data-pt="Páginas que transformam visitantes em clientes" data-en="Pages that turn visitors into customers">Páginas que transformam visitantes em clientes</p>
+            </div>
+          </div>
+
+          <div class="lp-cards-grid">
+            <div class="lp-card reveal-card" style="--delay: 0">
+              <div class="lp-card-icon">🎯</div>
+              <div class="lp-card-num">01</div>
+              <h4 data-pt="LP de Produto" data-en="Product LP">LP de Produto</h4>
+              <p data-pt="Converta tráfego frio em compradores com design persuasivo e copy de alto impacto." data-en="Convert cold traffic into buyers with persuasive design and high-impact copy.">Converta tráfego frio em compradores com design persuasivo e copy de alto impacto.</p>
+              <div class="lp-card-tags">
+                <span>Copywriting</span><span>UI/UX</span><span>CRO</span>
+              </div>
+            </div>
+
+            <div class="lp-card reveal-card" style="--delay: 1">
+              <div class="lp-card-icon">📣</div>
+              <div class="lp-card-num">02</div>
+              <h4 data-pt="LP de Lançamento" data-en="Launch LP">LP de Lançamento</h4>
+              <p data-pt="Crie expectativa, capture leads e maximize vendas no momento do lançamento." data-en="Build anticipation, capture leads, and maximize sales at launch time.">Crie expectativa, capture leads e maximize vendas no momento do lançamento.</p>
+              <div class="lp-card-tags">
+                <span>Lead Gen</span><span>Funil</span><span>E-mail</span>
+              </div>
+            </div>
+
+            <div class="lp-card reveal-card featured-card" style="--delay: 2">
+              <div class="featured-badge" data-pt="Mais pedido" data-en="Most requested">Mais pedido</div>
+              <div class="lp-card-icon">🏢</div>
+              <div class="lp-card-num">03</div>
+              <h4 data-pt="LP Institucional" data-en="Institutional LP">LP Institucional</h4>
+              <p data-pt="Profissionalismo e credibilidade que fecham negócios antes mesmo da reunião." data-en="Professionalism and credibility that close deals before the meeting.">Profissionalismo e credibilidade que fecham negócios antes mesmo da reunião.</p>
+              <div class="lp-card-tags">
+                <span>Branding</span><span>B2B</span><span>SEO</span>
+              </div>
+            </div>
+
+            <div class="lp-card reveal-card" style="--delay: 3">
+              <div class="lp-card-icon">⚡</div>
+              <div class="lp-card-num">04</div>
+              <h4 data-pt="LP de Serviço Local" data-en="Local Service LP">LP de Serviço Local</h4>
+              <p data-pt="Domine o Google local e transforme pesquisas em agendamentos e ligações." data-en="Dominate local Google and turn searches into bookings and calls.">Domine o Google local e transforme pesquisas em agendamentos e ligações.</p>
+              <div class="lp-card-tags">
+                <span>Google Ads</span><span>Local SEO</span><span>CTA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DIVISOR VISUAL -->
+        <div class="service-divider reveal-up">
+          <div class="divider-line"></div>
+          <div class="divider-icon">✦</div>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- ── PILAR 2: AUTOMAÇÕES ── -->
+        <div class="service-pillar" id="pillar-auto">
+          <div class="pillar-header">
+            <div class="pillar-number">02</div>
+            <div class="pillar-meta reveal-up">
+              <h3 class="pillar-title" data-pt="Automações" data-en="Automations">Automações</h3>
+              <p class="pillar-sub" data-pt="Fluxos inteligentes que trabalham 24/7 por você" data-en="Smart flows that work 24/7 for you">Fluxos inteligentes que trabalham 24/7 por você</p>
+            </div>
+          </div>
+
+          <div class="auto-flow-grid">
+            <div class="auto-card reveal-card" style="--delay: 0">
+              <div class="auto-icon-wrap">
+                <div class="auto-icon-ring"></div>
+                <span class="auto-icon">🤖</span>
+              </div>
+              <h4 data-pt="Atendimento via IA" data-en="AI Support">Atendimento via IA</h4>
+              <p data-pt="Chatbots treinados com seu conteúdo. Respondem dúvidas, qualificam leads e fecham vendas." data-en="Chatbots trained with your content. They answer questions, qualify leads, and close sales.">Chatbots treinados com seu conteúdo. Respondem dúvidas, qualificam leads e fecham vendas.</p>
+            </div>
+
+            <div class="auto-card reveal-card" style="--delay: 1">
+              <div class="auto-icon-wrap">
+                <div class="auto-icon-ring"></div>
+                <span class="auto-icon">📩</span>
+              </div>
+              <h4 data-pt="E-mail Marketing" data-en="Email Marketing">E-mail Marketing</h4>
+              <p data-pt="Sequências automáticas que nutrem leads e reativam clientes enquanto você descansa." data-en="Automatic sequences that nurture leads and reactivate customers while you rest.">Sequências automáticas que nutrem leads e reativam clientes enquanto você descansa.</p>
+            </div>
+
+            <div class="auto-card reveal-card" style="--delay: 2">
+              <div class="auto-icon-wrap">
+                <div class="auto-icon-ring"></div>
+                <span class="auto-icon">🔗</span>
+              </div>
+              <h4 data-pt="Integrações" data-en="Integrations">Integrações</h4>
+              <p data-pt="Conectamos CRM, pagamentos, WhatsApp, planilhas e mais. Seu negócio em um só fluxo." data-en="We connect CRM, payments, WhatsApp, spreadsheets, and more. Your business in one flow.">Conectamos CRM, pagamentos, WhatsApp, planilhas e mais. Seu negócio em um só fluxo.</p>
+            </div>
+
+            <div class="auto-card reveal-card" style="--delay: 3">
+              <div class="auto-icon-wrap">
+                <div class="auto-icon-ring"></div>
+                <span class="auto-icon">📊</span>
+              </div>
+              <h4 data-pt="Relatórios Automáticos" data-en="Auto Reports">Relatórios Automáticos</h4>
+              <p data-pt="Dashboards e relatórios que chegam no seu WhatsApp sem você precisar gerar nada." data-en="Dashboards and reports delivered to your WhatsApp without you lifting a finger.">Dashboards e relatórios que chegam no seu WhatsApp sem você precisar gerar nada.</p>
+            </div>
+          </div>
+
+          <!-- Fluxo visual de automação -->
+          <div class="flow-visual reveal-up">
+            <div class="flow-node flow-source">
+              <span>Lead</span>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-action">
+              <span data-pt="Qualifica" data-en="Qualifies">Qualifica</span>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-action">
+              <span data-pt="Nutre" data-en="Nurtures">Nutre</span>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-action">
+              <span data-pt="Converte" data-en="Converts">Converte</span>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node flow-result">
+              <span data-pt="Venda 💰" data-en="Sale 💰">Venda 💰</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         PORTFÓLIO — CASOS
+         ══════════════════════════════════════════ -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-pt="Nosso trabalho" data-en="Our work">Nosso trabalho</span>
+          <h2 class="section-title" data-pt="Projetos que<br><em>fizeram história</em>" data-en="Projects that<br><em>made history</em>">
+            Projetos que<br><em>fizeram história</em>
+          </h2>
+        </div>
+
+        <!-- Filtros -->
+        <div class="portfolio-filters reveal-up">
+          <button class="filter-btn" data-filter="all" data-pt="Todos" data-en="All">Todos</button>
+          <button class="filter-btn active" data-filter="lp" data-pt="Landing Pages" data-en="Landing Pages">Landing Pages</button>
+          <button class="filter-btn" data-filter="auto" data-pt="Automações" data-en="Automations">Automações</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+          <a href="demos/clinica-estetica.html" target="_blank" class="portfolio-item reveal-card" data-category="lp" style="--delay:0">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Projeto ↗</div>
+              <div class="port-overlay-sub">Clínica Estética Premium</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/clinica-estetica.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Landing Page" data-en="Landing Page">Landing Page</span>
+              <h4 data-pt="Clínica Estética Premium" data-en="Premium Aesthetic Clinic">Clínica Estética Premium</h4>
+              <p data-pt="+340% em agendamentos no primeiro mês" data-en="+340% in bookings in the first month">+340% em agendamentos no primeiro mês</p>
+              <span class="port-cta">Ver projeto →</span>
+            </div>
+          </a>
+
+          <a href="demos/imobiliaria-ia.html" target="_blank" class="portfolio-item reveal-card hidden" data-category="auto" style="--delay:1">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Case ↗</div>
+              <div class="port-overlay-sub">Imobiliária Inteligente</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/imobiliaria-ia.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Automação" data-en="Automation">Automação</span>
+              <h4 data-pt="Imobiliária Inteligente" data-en="Smart Real Estate">Imobiliária Inteligente</h4>
+              <p data-pt="ChatBot que fechou 28 contratos em 90 dias" data-en="ChatBot that closed 28 contracts in 90 days">ChatBot que fechou 28 contratos em 90 dias</p>
+              <span class="port-cta">Ver case →</span>
+            </div>
+          </a>
+
+          <a href="demos/infoproduto.html" target="_blank" class="portfolio-item reveal-card" data-category="lp" style="--delay:2">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Projeto ↗</div>
+              <div class="port-overlay-sub">Infoproduto Digital</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/infoproduto.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Landing Page" data-en="Landing Page">Landing Page</span>
+              <h4 data-pt="Infoproduto Digital" data-en="Digital Infoproduct">Infoproduto Digital</h4>
+              <p data-pt="R$ 280k em vendas no lançamento" data-en="R$ 280k in launch sales">R$ 280k em vendas no lançamento</p>
+              <span class="port-cta">Ver projeto →</span>
+            </div>
+          </a>
+
+          <a href="demos/ecommerce-crm.html" target="_blank" class="portfolio-item reveal-card hidden" data-category="auto" style="--delay:3">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Case ↗</div>
+              <div class="port-overlay-sub">E-commerce + CRM</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/ecommerce-crm.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Automação" data-en="Automation">Automação</span>
+              <h4 data-pt="E-commerce + CRM" data-en="E-commerce + CRM">E-commerce + CRM</h4>
+              <p data-pt="Recuperação de carrinho: +180% em receita" data-en="Cart recovery: +180% in revenue">Recuperação de carrinho: +180% em receita</p>
+              <span class="port-cta">Ver case →</span>
+            </div>
+          </a>
+
+          <a href="demos/consultorio-medico.html" target="_blank" class="portfolio-item reveal-card" data-category="lp" style="--delay:4">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Projeto ↗</div>
+              <div class="port-overlay-sub">Consultório Médico</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/consultorio-medico.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Landing Page" data-en="Landing Page">Landing Page</span>
+              <h4 data-pt="Consultório Médico" data-en="Medical Practice">Consultório Médico</h4>
+              <p data-pt="Agenda lotada em 48h após o lançamento" data-en="Fully booked 48h after launch">Agenda lotada em 48h após o lançamento</p>
+              <span class="port-cta">Ver projeto →</span>
+            </div>
+          </a>
+
+          <a href="demos/loja-roupas.html" target="_blank" class="portfolio-item reveal-card hidden" data-category="auto" style="--delay:5">
+            <div class="port-overlay">
+              <div class="port-overlay-btn">Ver Case ↗</div>
+              <div class="port-overlay-sub">Loja de Roupas Online</div>
+            </div>
+            <div class="port-mock">
+              <div class="port-mock-bar"><span></span><span></span><span></span></div>
+              <div class="port-iframe-wrap">
+                <iframe src="demos/loja-roupas.html" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>
+              </div>
+            </div>
+            <div class="port-info">
+              <span class="port-tag" data-pt="Automação" data-en="Automation">Automação</span>
+              <h4 data-pt="Loja de Roupas Online" data-en="Online Fashion Store">Loja de Roupas Online</h4>
+              <p data-pt="Atendimento 100% automatizado via WhatsApp" data-en="100% automated WhatsApp support">Atendimento 100% automatizado via WhatsApp</p>
+              <span class="port-cta">Ver case →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SOCIAL PROOF — NÚMEROS
+         ══════════════════════════════════════════ -->
+    <section id="numbers" class="numbers-section">
+      <div class="numbers-inner">
+        <div class="number-block reveal-up" style="--delay:0">
+          <span class="big-number" data-target="150">0</span><span class="big-suffix">+</span>
+          <span class="number-label" data-pt="Projetos entregues" data-en="Projects delivered">Projetos entregues</span>
+        </div>
+        <div class="number-block reveal-up" style="--delay:1">
+          <span class="big-number" data-target="3">0</span><span class="big-suffix">x</span>
+          <span class="number-label" data-pt="Média de aumento em conversões" data-en="Average conversion increase">Média de aumento em conversões</span>
+        </div>
+        <div class="number-block reveal-up" style="--delay:2">
+          <span class="big-number" data-target="98">0</span><span class="big-suffix">%</span>
+          <span class="number-label" data-pt="Taxa de satisfação" data-en="Satisfaction rate">Taxa de satisfação</span>
+        </div>
+        <div class="number-block reveal-up" style="--delay:3">
+          <span class="big-number" data-target="7">0</span><span class="big-suffix">dias</span>
+          <span class="number-label" data-pt="Prazo médio de entrega" data-en="Average delivery time">Prazo médio de entrega</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         PREÇOS
+         ══════════════════════════════════════════ -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-tag" data-pt="Investimento" data-en="Investment">Investimento</span>
+          <h2 class="section-title" data-pt="Planos que cabem<br>no seu bolso." data-en="Plans that fit<br>your budget.">
+            Planos que cabem<br>no seu bolso.
+          </h2>
+          <p class="section-sub reveal-up" data-pt="Sem surpresas. Sem letras miúdas. Apenas resultados." data-en="No surprises. No fine print. Just results.">
+            Sem surpresas. Sem letras miúdas. Apenas resultados.
+          </p>
+        </div>
+
+        <!-- Toggle Mensal/Único -->
+        <div class="pricing-toggle reveal-up">
+          <span data-pt="Pagamento único" data-en="One-time">Pagamento único</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="pricing-toggle-input" />
+            <span class="toggle-track"></span>
+          </label>
+          <span data-pt="Pacote mensal" data-en="Monthly package">Pacote mensal</span>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Starter -->
+          <div class="pricing-card reveal-card" style="--delay:0">
+            <div class="pricing-card-glow"></div>
+            <div class="pricing-header">
+              <span class="pricing-icon">🌱</span>
+              <h3 data-pt="Starter" data-en="Starter">Starter</h3>
+              <p data-pt="Para quem está começando" data-en="For those just starting">Para quem está começando</p>
+            </div>
+            <div class="pricing-price">
+              <span class="price-currency">R$</span>
+              <span class="price-amount price-once" data-monthly="497">1.497</span>
+              <span class="price-period" data-pt="/projeto" data-en="/project">/projeto</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✅ <span data-pt="1 Landing Page" data-en="1 Landing Page">1 Landing Page</span></li>
+              <li>✅ <span data-pt="Design responsivo" data-en="Responsive design">Design responsivo</span></li>
+              <li>✅ <span data-pt="Integração com WhatsApp" data-en="WhatsApp integration">Integração com WhatsApp</span></li>
+              <li>✅ <span data-pt="SEO básico" data-en="Basic SEO">SEO básico</span></li>
+              <li>✅ <span data-pt="Entrega em 7 dias" data-en="Delivery in 7 days">Entrega em 7 dias</span></li>
+              <li>❌ <span data-pt="Automações" data-en="Automations">Automações</span></li>
+            </ul>
+            <a href="#contact" class="pricing-cta btn-ghost magnetic" data-pt="Quero Esse" data-en="I Want This">Quero Esse</a>
+          </div>
+
+          <!-- Pro — Destaque -->
+          <div class="pricing-card pricing-featured reveal-card" style="--delay:1">
+            <div class="pricing-card-glow featured-glow"></div>
+            <div class="pricing-badge" data-pt="Mais popular" data-en="Most popular">Mais popular</div>
+            <div class="pricing-header">
+              <span class="pricing-icon">🚀</span>
+              <h3 data-pt="Pro" data-en="Pro">Pro</h3>
+              <p data-pt="Para negócios que querem crescer" data-en="For businesses ready to grow">Para negócios que querem crescer</p>
+            </div>
+            <div class="pricing-price">
+              <span class="price-currency">R$</span>
+              <span class="price-amount price-once" data-monthly="997">2.997</span>
+              <span class="price-period" data-pt="/projeto" data-en="/project">/projeto</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✅ <span data-pt="1 Landing Page premium" data-en="1 Premium Landing Page">1 Landing Page premium</span></li>
+              <li>✅ <span data-pt="Design + Copy incluso" data-en="Design + Copy included">Design + Copy incluso</span></li>
+              <li>✅ <span data-pt="Automação de e-mail" data-en="Email automation">Automação de e-mail</span></li>
+              <li>✅ <span data-pt="ChatBot básico" data-en="Basic ChatBot">ChatBot básico</span></li>
+              <li>✅ <span data-pt="Analytics + Pixel" data-en="Analytics + Pixel">Analytics + Pixel</span></li>
+              <li>✅ <span data-pt="Suporte 30 dias" data-en="30-day support">Suporte 30 dias</span></li>
+            </ul>
+            <a href="#contact" class="pricing-cta btn-primary magnetic" data-pt="Quero Esse" data-en="I Want This">Quero Esse</a>
+          </div>
+
+          <!-- Elite -->
+          <div class="pricing-card reveal-card" style="--delay:2">
+            <div class="pricing-card-glow"></div>
+            <div class="pricing-header">
+              <span class="pricing-icon">💎</span>
+              <h3 data-pt="Elite" data-en="Elite">Elite</h3>
+              <p data-pt="Para quem quer o melhor" data-en="For those who want the best">Para quem quer o melhor</p>
+            </div>
+            <div class="pricing-price">
+              <span class="price-currency">R$</span>
+              <span class="price-amount price-once" data-monthly="1997">5.997</span>
+              <span class="price-period" data-pt="/projeto" data-en="/project">/projeto</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✅ <span data-pt="LP + Funil completo" data-en="LP + Full funnel">LP + Funil completo</span></li>
+              <li>✅ <span data-pt="Automação completa" data-en="Full automation">Automação completa</span></li>
+              <li>✅ <span data-pt="ChatBot com IA" data-en="AI ChatBot">ChatBot com IA</span></li>
+              <li>✅ <span data-pt="Integração CRM" data-en="CRM Integration">Integração CRM</span></li>
+              <li>✅ <span data-pt="Relatórios automáticos" data-en="Automated reports">Relatórios automáticos</span></li>
+              <li>✅ <span data-pt="Suporte 90 dias" data-en="90-day support">Suporte 90 dias</span></li>
+            </ul>
+            <a href="#contact" class="pricing-cta btn-ghost magnetic" data-pt="Quero Esse" data-en="I Want This">Quero Esse</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         CONTATO — CTA FINAL
+         ══════════════════════════════════════════ -->
+    <section id="contact" class="contact-section">
+      <div class="contact-glow-bg"></div>
+      <div class="container">
+        <div class="contact-inner">
+          <div class="contact-text reveal-up">
+            <span class="section-tag" data-pt="Vamos trabalhar juntos" data-en="Let's work together">Vamos trabalhar juntos</span>
+            <h2 class="contact-title" data-pt="Pronto para<br>transformar seu negócio?" data-en="Ready to<br>transform your business?">
+              Pronto para<br>transformar seu negócio?
+            </h2>
+            <p data-pt="Conte-me sobre o seu projeto. Responderei em até 24 horas." data-en="Tell me about your project. I'll respond within 24 hours.">
+              Conte-me sobre o seu projeto. Responderei em até 24 horas.
+            </p>
+            <div class="contact-badges">
+              <span>✅ <span data-pt="Resposta rápida" data-en="Quick response">Resposta rápida</span></span>
+              <span>✅ <span data-pt="Orçamento gratuito" data-en="Free quote">Orçamento gratuito</span></span>
+              <span>✅ <span data-pt="Sem compromisso" data-en="No commitment">Sem compromisso</span></span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal-up" id="contact-form" novalidate>
+            <div class="form-group">
+              <input type="text" id="cf-name" placeholder=" " required />
+              <label for="cf-name" data-pt="Seu nome" data-en="Your name">Seu nome</label>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="cf-email" placeholder=" " required />
+              <label for="cf-email" data-pt="Seu e-mail" data-en="Your email">Seu e-mail</label>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <select id="cf-service" required>
+                <option value="" disabled selected></option>
+                <option value="lp" data-pt="Landing Page" data-en="Landing Page">Landing Page</option>
+                <option value="auto" data-pt="Automação" data-en="Automation">Automação</option>
+                <option value="both" data-pt="Landing Page + Automação" data-en="Landing Page + Automation">Landing Page + Automação</option>
+              </select>
+              <label for="cf-service" data-pt="Qual serviço?" data-en="Which service?">Qual serviço?</label>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="cf-message" placeholder=" " rows="4"></textarea>
+              <label for="cf-message" data-pt="Conte sobre seu projeto" data-en="Tell me about your project">Conte sobre seu projeto</label>
+              <span class="form-line"></span>
+            </div>
+            <button type="submit" class="btn-primary form-submit magnetic" data-pt="Enviar Mensagem →" data-en="Send Message →">Enviar Mensagem →</button>
+            <div id="form-feedback" class="form-feedback"></div>
+          </form>
+        </div>
+
+        <!-- Canais de contato direto -->
+        <div class="contact-channels reveal-up">
+          <a href="https://wa.me/5500000000000" class="channel-item magnetic" target="_blank" rel="noopener">
+            <span class="channel-icon">💬</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <span data-pt="Resposta em minutos" data-en="Response in minutes">Resposta em minutos</span>
+            </div>
+          </a>
+          <a href="mailto:contato@conding2u.com" class="channel-item magnetic">
+            <span class="channel-icon">✉️</span>
+            <div>
+              <strong>E-mail</strong>
+              <span>contato@conding2u.com</span>
+            </div>
+          </a>
+          <a href="https://instagram.com" class="channel-item magnetic" target="_blank" rel="noopener">
+            <span class="channel-icon">📸</span>
+            <div>
+              <strong>Instagram</strong>
+              <span>@conding2u</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         RODAPÉ
+         ══════════════════════════════════════════ -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <span class="footer-logo">
+              <img src="assets/images/logo.png" alt="conding2u" class="logo-img logo-img--footer" />
+            </span>
+            <p data-pt="Design que converte. Tecnologia que liberta." data-en="Design that converts. Technology that frees.">Design que converte. Tecnologia que liberta.</p>
+          </div>
+          <div class="footer-links">
+            <a href="#services" data-pt="Serviços" data-en="Services">Serviços</a>
+            <a href="#portfolio" data-pt="Portfólio" data-en="Portfolio">Portfólio</a>
+            <a href="#pricing" data-pt="Preços" data-en="Pricing">Preços</a>
+            <a href="#contact" data-pt="Contato" data-en="Contact">Contato</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2026 conding2u — <span data-pt="Todos os direitos reservados" data-en="All rights reserved">Todos os direitos reservados</span></p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">📸</a>
+            <a href="#" aria-label="LinkedIn">💼</a>
+            <a href="#" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

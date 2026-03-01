@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImoIA — Imobiliária com Inteligência Artificial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>`n    /* Ocultar back-btn quando em iframe */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050b18;
+      --surface: #0d1526;
+      --border: rgba(99,179,237,0.15);
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+      --accent: #00e5ff;
+      --text: #e2e8f0;
+      --muted: #64748b;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); }
+
+    /* BACK */
+    .back-btn {
+      position: fixed; top: 20px; left: 20px; z-index: 999;
+      display: flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.05); color: var(--accent);
+      padding: 10px 18px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; border: 1px solid var(--border);
+      text-decoration: none; backdrop-filter: blur(8px);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .back-btn:hover { background: rgba(0,229,255,0.08); transform: translateX(-2px); }
+
+    /* NAV */
+    nav {
+      position: fixed; width: 100%; top: 0; z-index: 100;
+      padding: 18px 40px; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(5,11,24,0.8); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .nav-logo span { color: var(--text); }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent); color: var(--bg);
+      padding: 10px 24px; border-radius: 6px; font-size: 14px; font-weight: 700;
+      text-decoration: none; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 40px 80px;
+      position: relative; overflow: hidden;
+    }
+    .grid-bg {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: linear-gradient(var(--accent) 1px, transparent 1px),
+        linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .glow {
+      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.2);
+      color: var(--accent); padding: 6px 16px; border-radius: 6px;
+      font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 28px;
+    }
+    .dot-pulse {
+      width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+    h1 { font-size: clamp(36px,4.5vw,58px); font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+    h1 .grad { background: linear-gradient(90deg, var(--blue), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 17px; color: var(--muted); line-height: 1.7; margin-bottom: 36px; }
+    .btn-primary {
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      color: white; padding: 16px 36px; border-radius: 8px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      display: inline-block; transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(59,130,246,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(59,130,246,0.5); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); padding: 14px 32px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; margin-left: 16px; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* FLOW DIAGRAM */
+    .flow-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 32px; position: relative;
+    }
+    .flow-title { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 28px; }
+    .flow-step {
+      display: flex; align-items: center; gap: 16px;
+      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+      border-radius: 10px; padding: 16px 20px; margin-bottom: 8px;
+    }
+    .flow-step:last-of-type { margin-bottom: 0; }
+    .flow-step.active { border-color: var(--accent); background: rgba(0,229,255,0.05); }
+    .step-icon { font-size: 24px; }
+    .step-info strong { display: block; font-size: 14px; font-weight: 600; }
+    .step-info span { font-size: 12px; color: var(--muted); }
+    .step-badge {
+      margin-left: auto; background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.3);
+      color: var(--accent); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px;
+    }
+    .flow-connector {
+      text-align: center; color: var(--muted); font-size: 18px; line-height: 1; margin: 4px 0;
+    }
+    .flow-result {
+      margin-top: 20px; padding: 16px; border-radius: 10px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(0,229,255,0.08));
+      border: 1px solid rgba(0,229,255,0.2); text-align: center;
+    }
+    .flow-result strong { color: var(--accent); font-size: 22px; display: block; margin-bottom: 4px; }
+    .flow-result span { font-size: 13px; color: var(--muted); }
+
+    /* STATS */
+    .stats-band {
+      background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 50px 40px;
+    }
+    .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+    .stat-num { font-size: 48px; font-weight: 700; background: linear-gradient(90deg, var(--blue), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-label { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+    /* HOW */
+    .section { padding: 100px 40px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px,3.5vw,44px); font-weight: 700; margin-bottom: 16px; }
+    .section-sub { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 540px; margin-bottom: 60px; }
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .how-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      transition: border-color 0.3s;
+    }
+    .how-card:hover { border-color: var(--accent); }
+    .how-num { font-size: 48px; font-weight: 700; color: rgba(0,229,255,0.15); margin-bottom: 16px; }
+    .how-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .how-card p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+    /* TESTIMONIALS */
+    .test-section { background: var(--surface); padding: 100px 40px; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 60px; }
+    .test-card { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
+    .stars { color: #fbbf24; margin-bottom: 14px; font-size: 16px; }
+    .test-card p { color: rgba(226,232,240,0.7); font-size: 14px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .test-author { display: flex; align-items: center; gap: 12px; }
+    .av { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--cyan)); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .author-info strong { display: block; font-size: 14px; }
+    .author-info span { font-size: 12px; color: var(--muted); }
+
+    /* CTA */
+    .cta-section {
+      padding: 100px 40px; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(0,229,255,0.06) 0%, transparent 70%); pointer-events: none; }
+    .cta-section h2 { font-size: clamp(28px,4vw,52px); font-weight: 700; margin-bottom: 20px; position: relative; }
+    .cta-section p { color: var(--muted); font-size: 17px; margin-bottom: 40px; position: relative; }
+
+    footer { background: var(--surface); border-top: 1px solid var(--border); text-align: center; padding: 40px; font-size: 14px; color: var(--muted); }
+    footer strong { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-inner, .how-grid, .test-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 100px 20px 60px; }
+      .section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../index.html#portfolio" class="back-btn">← Voltar ao Portfólio</a>
+
+  <nav>
+    <div class="nav-logo"><span>Imo</span>IA</div>
+    <div class="nav-links">
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Cases</a>
+    </div>
+    <a href="#comecar" class="nav-cta">Começar Agora</a>
+  </nav>
+
+  <section class="hero">
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="chip"><div class="dot-pulse"></div> IA Ativa 24/7</div>
+        <h1>A imobiliária que vende enquanto você <span class="grad">dorme</span></h1>
+        <p class="hero-sub">Automação com IA que qualifica leads, agenda visitas e fecha contratos automaticamente. 28 contratos fechados em 90 dias sem nenhuma ligação manual.</p>
+        <a href="#comecar" class="btn-primary">Ver como funciona →</a>
+        <a href="#resultados" class="btn-ghost">Resultados reais</a>
+      </div>
+      <div class="flow-box">
+        <div class="flow-title">⚡ Fluxo de automação ativo</div>
+        <div class="flow-step">
+          <div class="step-icon">📱</div>
+          <div class="step-info">
+            <strong>Lead entra pelo WhatsApp</strong>
+            <span>Anúncio Instagram → conversa iniciada</span>
+          </div>
+        </div>
+        <div class="flow-connector">↓</div>
+        <div class="flow-step active">
+          <div class="step-icon">🤖</div>
+          <div class="step-info">
+            <strong>IA qualifica interesse</strong>
+            <span>Pergunta orçamento, bairro, urgência</span>
+          </div>
+          <div class="step-badge">IA ativa</div>
+        </div>
+        <div class="flow-connector">↓</div>
+        <div class="flow-step">
+          <div class="step-icon">📅</div>
+          <div class="step-info">
+            <strong>Agenda visita automaticamente</strong>
+            <span>Calendário do corretor sincronizado</span>
+          </div>
+        </div>
+        <div class="flow-connector">↓</div>
+        <div class="flow-step">
+          <div class="step-icon">📝</div>
+          <div class="step-info">
+            <strong>Contrato enviado para assinar</strong>
+            <span>DocuSign integrado, zero papel</span>
+          </div>
+        </div>
+        <div class="flow-result">
+          <strong>28 contratos</strong>
+          <span>fechados em 90 dias com esse fluxo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-band">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-num">28</div>
+        <div class="stat-label">Contratos em 90 dias</div>
+      </div>
+      <div>
+        <div class="stat-num">94%</div>
+        <div class="stat-label">Leads qualificados pela IA</div>
+      </div>
+      <div>
+        <div class="stat-num">3min</div>
+        <div class="stat-label">Tempo médio de resposta</div>
+      </div>
+      <div>
+        <div class="stat-num">R$ 0</div>
+        <div class="stat-label">Custo por atendimento</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" id="como-funciona">
+    <div class="section-inner">
+      <p class="section-tag">Como Funciona</p>
+      <h2 class="section-title">Da captação ao contrato, tudo automático</h2>
+      <p class="section-sub">Construímos um sistema completo que opera 24/7 sem precisar de nenhuma ação manual da sua equipe.</p>
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-num">01</div>
+          <h3>Lead chega pelo canal</h3>
+          <p>WhatsApp, Instagram, site, portal imobiliário — todos confluem para um único sistema centralizado.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">02</div>
+          <h3>IA entende e qualifica</h3>
+          <p>Conversa inteligente que descobre orçamento, bairro de interesse, urgência e intenção de compra real.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">03</div>
+          <h3>Corretor só fecha</h3>
+          <p>O lead chega para o humano já aquecido, com visita agendada e perfil completo. A venda está 80% feita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="test-section" id="depoimentos">
+    <div class="section-inner">
+      <p class="section-tag">Cases Reais</p>
+      <h2 class="section-title">Resultados que falam por si</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"Em 90 dias a IA fechou mais que minha equipe inteira no trimestre anterior. Estou expandindo o time graças às vendas geradas."</p>
+          <div class="test-author">
+            <div class="av">🏢</div>
+            <div class="author-info">
+              <strong>Roberto Andrade</strong>
+              <span>Diretor — Grupo Habitat</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"Antes eu ficava até meia-noite respondendo WhatsApp. Hoje acordo e já tenho visitas agendadas. A automação mudou minha vida."</p>
+          <div class="test-author">
+            <div class="av">🏠</div>
+            <div class="author-info">
+              <strong>Patrícia Lima</strong>
+              <span>Corretora autônoma</span>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="stars">★★★★★</div>
+          <p>"O ROI foi absurdo. Paguei a automação em 3 semanas só com o primeiro contrato que o bot ajudou a fechar."</p>
+          <div class="test-author">
+            <div class="av">🏗️</div>
+            <div class="author-info">
+              <strong>Lucas Menezes</strong>
+              <span>Incorporadora UrbanLab</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="comecar">
+    <div class="cta-glow"></div>
+    <h2>Pronto para vender <span class="grad">enquanto dorme?</span></h2>
+    <p>Implementação completa em 7 dias. Sem código, sem complicação.</p>
+    <a href="#comecar" class="btn-primary">Quero automatizar minha imobiliária →</a>
+  </section>
+
+  <footer>
+    <p>© 2026 <strong>ImoIA — Automação Imobiliária</strong></p>
+    <p style="margin-top:8px; font-size:12px;">Demo criado por <strong>conding2u</strong> — conding2u.com</p>
+  </footer>
+
+<script>if(window.self!==window.top){var b=document.querySelector(".back-btn");if(b)b.style.display="none";}</script>
+</body>
+</html>
