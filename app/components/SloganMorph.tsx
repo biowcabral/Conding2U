@@ -204,13 +204,13 @@ export default function SloganMorph() {
               We
             </span>
 
-            {/* Morphing word */}
+            {/* Morphing word: "Coding" = white, "2u" = accent (orange) */}
             <span
               className="font-black"
               style={{
                 fontSize: 'clamp(2.8rem, 8.5vw, 7rem)',
                 letterSpacing: '-0.01em',
-                color: accent,
+                color: '#FFFFFF',
                 filter: `drop-shadow(0 0 ${glowPx}px ${accent}${glowHex}) drop-shadow(0 0 ${Math.round(glowPx * 0.5)}px ${accent}${glowHex})`,
                 display: 'inline-block',
               }}
@@ -249,8 +249,8 @@ export default function SloganMorph() {
 
               <span style={newLetter(18, nIn)}>n</span>
               <span style={newLetter(54, gIn)}>g</span>
-              <span style={newLetter(115, twoIn)}>2</span>
-              <span style={newLetter(185, uIn)}>u</span>
+              <span style={{ ...newLetter(115, twoIn), color: accent }}>2</span>
+              <span style={{ ...newLetter(185, uIn), color: accent }}>u</span>
             </span>
 
             <span

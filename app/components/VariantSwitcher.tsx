@@ -9,6 +9,7 @@ const COLORS: Record<VariantKey, string> = {
   'dark-blue': 'bg-cyan-400',
   'black-gold': 'bg-yellow-500',
   'green-white': 'bg-green-600',
+  'orange-navy': 'bg-orange-500',
 };
 
 export default function VariantSwitcher() {
@@ -31,6 +32,7 @@ export default function VariantSwitcher() {
                 key === 'purple' ? 'bg-purple-600 text-white' :
                 key === 'dark-blue' ? 'bg-gray-900 text-cyan-400 border border-cyan-400' :
                 key === 'black-gold' ? 'bg-black text-yellow-400 border border-yellow-400' :
+                key === 'orange-navy' ? 'bg-[#0B1628] text-orange-400 border border-orange-500' :
                 'bg-green-600 text-white'
               }`}
             >

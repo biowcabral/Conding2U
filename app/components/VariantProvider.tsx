@@ -120,6 +120,35 @@ export const variants: Record<VariantKey, VariantConfig> = {
     checkColor: 'text-green-600',
     statText: 'text-green-600',
   },
+  'orange-navy': {
+    key: 'orange-navy',
+    label: 'Orange & Navy',
+    pageBg: 'bg-[#0B1628]',
+    textPrimary: 'text-white',
+    textSecondary: 'text-slate-300',
+    textMuted: 'text-slate-500',
+    accentText: 'text-orange-500',
+    accentHex: '#F97316',
+    btnPrimary: 'bg-orange-500 hover:bg-orange-400 active:bg-orange-600',
+    btnPrimaryText: 'text-white font-bold',
+    btnSecondary: 'border-2 border-orange-500 hover:bg-orange-500/10',
+    btnSecondaryText: 'text-orange-400',
+    sectionAlt: 'bg-[#0E1C30]',
+    sectionDark: 'bg-black',
+    cardBg: 'bg-[#131F33]',
+    cardBorder: 'border border-[#1E2D45] hover:border-orange-500',
+    badgeBg: 'bg-orange-500/15',
+    badgeText: 'text-orange-400',
+    headerBg: 'bg-[#0B1628]/90 backdrop-blur-md',
+    headerBorder: 'border-b border-[#1E2D45]',
+    heroBg: 'bg-linear-to-br from-[#0B1628] via-[#0E1C30] to-black',
+    heroAccent: 'text-orange-300',
+    divider: 'border-[#1E2D45]',
+    shimmerClass: 'shimmer-text-orange',
+    glowClass: 'animate-pulse-glow-orange',
+    checkColor: 'text-orange-500',
+    statText: 'text-orange-400',
+  },
 };
 
 interface VariantContextType {
@@ -128,15 +157,15 @@ interface VariantContextType {
 }
 
 const VariantContext = createContext<VariantContextType>({
-  variant: variants.purple,
+  variant: variants['orange-navy'],
   setVariant: () => {},
 });
 
 export function VariantProvider({ children }: { children: React.ReactNode }) {
   const [variantKey, setVariantKey] = useState<VariantKey>(() => {
-    if (typeof window === 'undefined') return 'purple';
+    if (typeof window === 'undefined') return 'orange-navy';
     const saved = localStorage.getItem('c2u-variant') as VariantKey | null;
-    return saved && variants[saved] ? saved : 'purple';
+    return saved && variants[saved] ? saved : 'orange-navy';
   });
 
   const setVariant = (key: VariantKey) => {
