@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useVariant } from './VariantProvider';
 import { useReveal } from './useReveal';

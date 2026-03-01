@@ -1,4 +1,4 @@
-﻿export type VariantKey = 'purple' | 'dark-blue' | 'black-gold' | 'green-white';
+export type VariantKey = 'purple' | 'dark-blue' | 'black-gold' | 'green-white';
 
 export interface VariantConfig {
   key: VariantKey;
