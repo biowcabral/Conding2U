@@ -257,16 +257,9 @@ export default function SloganMorph() {
               className="font-black text-white"
               style={{ fontSize: 'clamp(2.8rem, 8.5vw, 7rem)', letterSpacing: '-0.03em', opacity: contextOp }}
             >
-              Your
+              Success.
             </span>
           </div>
-
-          <p
-            className="font-black text-white"
-            style={{ fontSize: 'clamp(2.8rem, 8.5vw, 7rem)', letterSpacing: '-0.03em', lineHeight: 1, opacity: contextOp }}
-          >
-            Success.
-          </p>
 
           {/* Live binary string  ticker */}
           <p
