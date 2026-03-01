@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -24,7 +24,7 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <Image
             src="/logo.png"
-            alt="Conding2u"
+            alt="Coding2U"
             width={140}
             height={40}
             priority

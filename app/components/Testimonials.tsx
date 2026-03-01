@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useVariant } from './VariantProvider';
 import { useReveal } from './useReveal';
@@ -18,7 +18,7 @@ const TESTIMONIALS = [
     role: 'CEO — TechParts Online',
     photo: 'RT',
     stars: 5,
-    text: 'Our conversion rate was 0.8%. After Conding2u, it jumped to 6.2%. That translated into over $84,000 in additional revenue in 3 months without increasing our ad spend at all.',
+    text: 'Our conversion rate was 0.8%. After Coding2U, it jumped to 6.2%. That translated into over $84,000 in additional revenue in 3 months without increasing our ad spend at all.',
     highlight: '+$84,000 in additional revenue in 3 months',
     color: '#ef4444',
   },
@@ -36,7 +36,7 @@ const TESTIMONIALS = [
     role: 'Director — Ativo Real Estate',
     photo: 'MV',
     stars: 5,
-    text: 'I was paying $48 per lead with my old site. After the Conding2u landing page, the cost dropped to $11 and the leads are far more qualified. It simply changed the game.',
+    text: 'I was paying $48 per lead with my old site. After the Coding2U landing page, the cost dropped to $11 and the leads are far more qualified. It simply changed the game.',
     highlight: 'cost-per-lead dropped 77%',
     color: '#D4AF37',
   },

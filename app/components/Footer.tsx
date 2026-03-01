@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import { useVariant } from './VariantProvider';
@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <Image
               src="/logo.png"
-              alt="Conding2u"
+              alt="Coding2U"
               width={140}
               height={40}
               className="h-10 w-auto object-contain mb-1"
@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className={`mt-8 pt-6 border-t ${variant.divider} text-center`}>
           <p className={`text-xs ${variant.textMuted}`}>
-            © {year} Conding2u. All rights reserved.
+            © {year} Coding2U. All rights reserved.
             {' '} · Made with ♥ for businesses that want to grow.
           </p>
         </div>

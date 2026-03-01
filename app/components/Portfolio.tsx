@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { useVariant } from './VariantProvider';
@@ -132,7 +132,7 @@ export default function Portfolio() {
                   <div className="w-2 h-2 rounded-full bg-yellow-400/70" />
                   <div className="w-2 h-2 rounded-full bg-green-400/70" />
                   <div className="flex-1 h-4 rounded bg-white/10 text-white/40 text-[9px] flex items-center px-2 ml-1 truncate">
-                    conding2u.com
+                    Coding2U.com
                   </div>
                 </div>
                 {/* Scaled iframe — 400% wide/tall scaled to 25% = fills container exactly */}

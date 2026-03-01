@@ -1,4 +1,4 @@
-export type VariantKey = 'purple' | 'dark-blue' | 'black-gold' | 'green-white';
+﻿export type VariantKey = 'purple' | 'dark-blue' | 'black-gold' | 'green-white';
 
 export interface VariantConfig {
   key: VariantKey;
@@ -46,6 +46,6 @@ export interface VariantConfig {
 
 export const WHATSAPP_NUMBER = '5511999999999';
 export const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Hi! I saw the Conding2u page and I\'d like to know more about getting my landing page built.'
+  'Hi! I saw the Coding2U page and I\'d like to know more about getting my landing page built.'
 );
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;

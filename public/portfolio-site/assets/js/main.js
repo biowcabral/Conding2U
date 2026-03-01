@@ -1,4 +1,4 @@
-/* ═══════════════════════════════════════════════════════
+﻿/* ═══════════════════════════════════════════════════════
    STUDIO.LP — MAIN JAVASCRIPT
    GSAP + ScrollTrigger + Lenis + Custom Cursor + Particles
    ═══════════════════════════════════════════════════════ */
@@ -497,8 +497,8 @@
 
       // Atualiza atributo html.lang
       document.title = next === 'en'
-        ? 'conding2u — Landing Pages & Automations'
-        : 'conding2u — Landing Pages & Automações';
+        ? 'Coding2U — Landing Pages & Automations'
+        : 'Coding2U — Landing Pages & Automações';
     });
   }
 
