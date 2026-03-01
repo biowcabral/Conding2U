@@ -89,15 +89,48 @@ When you have gathered at least business type + what they need + some sense of u
 Only trigger handoff once. If user just says "hi", greet them warmly and ask what brings them here today.
 Respond in the SAME language the user writes in (English or Portuguese).`;
 
+// ── MOCK MODE ─────────────────────────────────────────────────────────────────
+// Used when OPENAI_API_KEY is not set (local testing / demo).
+// Simulates a full qualification conversation with pre-programmed responses.
+const MOCK_FLOW: Array<{ message: string; handoff?: boolean; summary?: string }> = [
+  {
+    message: "Great to meet you! 😊 What kind of business do you run — or what are you looking to promote?",
+  },
+  {
+    message: "Nice! And what are you hoping to get from a landing page? More leads, online sales, appointment bookings…?",
+  },
+  {
+    message: "Got it. Do you have a timeline in mind? For example, do you need this live for a campaign or launch coming up?",
+  },
+  {
+    message: "Perfect. Our complete package is $1,497 (or 12x $145) — includes copy, design, code, hosting, pixel setup and 30-day support. Does that fit your budget range?",
+  },
+  {
+    message: "Awesome, you sound like a great fit for what we do! Let me connect you with our team — they'll get back to you within a few hours. 🚀",
+    handoff: true,
+    summary: `- Business: Described by visitor during chat
+- Need: Landing page
+- Timeline: Discussed during chat
+- Budget: Acknowledged $1,497 package
+- Notes: Qualified via demo mode — real details to be confirmed by team`,
+  },
+];
+
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json(
-        { message: 'Chat is temporarily unavailable. Please contact us via WhatsApp!', handoff: false },
-        { status: 200 }
-      );
+    // Mock mode — no API key configured OR MOCK_CHAT=true
+    if (!process.env.OPENAI_API_KEY || process.env.MOCK_CHAT === 'true') {
+      // Count how many user messages have been sent (excluding the first assistant welcome)
+      const userMessages = (messages as Array<{ role: string }>).filter(m => m.role === 'user');
+      const step = Math.min(userMessages.length - 1, MOCK_FLOW.length - 1);
+      const response = MOCK_FLOW[step];
+      return NextResponse.json({
+        message: response.message,
+        handoff: response.handoff ?? false,
+        summary: response.summary ?? '',
+      });
     }
 
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
