@@ -16,8 +16,7 @@ import Guarantee from './components/Guarantee';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
-import SMSButton from './components/SMSButton';
+import ChatWidget from './components/ChatWidget';
 
 export default function Home() {
   return (
@@ -46,8 +45,7 @@ function PageContent() {
       <FAQ />
       <FinalCTA />
       <Footer />
-      <WhatsAppButton />
-      <SMSButton />
+      <ChatWidget />
       <VariantSwitcher />
     </main>
   );
