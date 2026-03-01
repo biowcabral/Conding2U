@@ -2,6 +2,7 @@ import { VariantProvider } from './components/VariantProvider';
 import VariantSwitcher from './components/VariantSwitcher';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import SloganMorph from './components/SloganMorph';
 import SocialTicker from './components/SocialTicker';
 import PainPoints from './components/PainPoints';
 import AmplifyPain from './components/AmplifyPain';
@@ -30,6 +31,7 @@ function PageContent() {
     <main>
       <Header />
       <Hero />
+      <SloganMorph />
       <SocialTicker />
       <PainPoints />
       <AmplifyPain />
