@@ -5,7 +5,7 @@ import { useVariant } from './VariantProvider';
 const TICKER_ITEMS = [
   '✅ Dr. Leonardo just signed up',
   '⭐ Estudio Forma tripled their conversions',
-  '🔥 Only 3 spots left this month',
+  '� Every month without a converting page = revenue left on the table',
   '✅ Manu Coaching sold out in 18 days',
   '📈 TechParts generated +$84K in 90 days',
   '✅ Ativo Imóveis cut cost-per-lead by 77%',

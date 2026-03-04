@@ -69,7 +69,7 @@ export default function Benefits() {
             EXCLUSIVE BONUS: Paid Traffic Guide for Your LP
           </p>
           <p className={`text-sm mt-1 ${variant.textMuted}`}>
-            Included for free — learn how to drive qualified visitors to your new page from day one.
+            Included in your package — learn how to drive qualified visitors to your new page from day one.
           </p>
         </div>
       </div>
