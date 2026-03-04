@@ -13,7 +13,7 @@ const OFFER_ITEMS = [
   { name: 'Meta + Google Pixel configured', value: '$250' },
   { name: 'SSL + 1-year hosting', value: '$480' },
   { name: '30-day technical support', value: '$600' },
-  { name: 'Video editing tutorial', value: '$200' },
+  { name: 'Onboarding call + delivery walkthrough', value: '$200' },
   { name: '🎁 BONUS: Paid Traffic Guide for your LP', value: '$497' },
 ];
 

@@ -22,8 +22,8 @@ const FAQS = [
     a: 'We create everything. After the initial diagnosis, our copy team writes all the content based on the C2U Method — persuasive copy, high-impact headlines and strategic CTAs. You review and approve.',
   },
   {
-    q: 'After delivery, can I edit the page myself?',
-    a: 'Yes! You receive a video tutorial showing exactly how to update text, images and information. Plus you have 30 days of technical support for any questions.',
+    q: 'After delivery, can I request changes to the page?',
+    a: 'Absolutely. You have 30 days of included technical support after delivery — just send us a message on WhatsApp and our team handles any adjustments for you. No technical knowledge required on your end.',
   },
   {
     q: 'Is the landing page suitable for paid ads (Meta Ads, Google Ads)?',

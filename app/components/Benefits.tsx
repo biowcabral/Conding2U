@@ -12,7 +12,7 @@ const BENEFITS = [
   { icon: '📊', title: 'Pixel & Analytics', desc: 'Google Analytics and Meta Pixel installed and configured. Real data for informed decisions.' },
   { icon: '🔒', title: 'SSL + 1-Year Hosting', desc: 'Security certificate and hosting included. Zero technical headaches for you.' },
   { icon: '🛠️', title: '30-Day Support', desc: 'After delivery you have 30 days to request adjustments at no extra cost. You’re never alone.' },
-  { icon: '📹', title: 'Editing Tutorial', desc: 'Video walkthrough showing how you can update text and images yourself in the future.' },
+  { icon: '📹', title: 'Onboarding Walkthrough', desc: 'Video call walking you through everything delivered — how the page works, what\'s connected, and how to request changes.' },
 ];
 
 export default function Benefits() {
