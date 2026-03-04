@@ -61,8 +61,8 @@ Step 1 — Free Diagnosis (Day 1): Free call on WhatsApp, learn about the busine
 Step 2 — Strategic Creation (Days 2–6): Copy + Design + Development + Basic SEO + Integrations. Client follows progress and approves.
 Step 3 — Delivery & Support (Day 7): Page goes live, client gets full access, usage walkthrough, and 30 days of support for adjustments.
 
-THE COMPLETE PACKAGE ($1,497 — or 12x $145):
-Total market value: $8,827 (83% off). Includes:
+THE COMPLETE PACKAGE ($597 CAD — or 12x $54 CAD):
+Total market value: $8,827 (93% off). Includes:
 ✓ Full landing page (copy + design + code) — worth $3,500
 ✓ C2U Method copy (behavioral neuroscience) — worth $1,800
 ✓ Mobile-first responsive design (73% of traffic is mobile) — worth $800
@@ -70,8 +70,8 @@ Total market value: $8,827 (83% off). Includes:
 ✓ Basic SEO + optimized meta tags — worth $300
 ✓ Meta Pixel + Google Analytics configured — worth $250
 ✓ SSL + 1-year hosting included — worth $480
-✓ 30-day technical support — worth $600
-✓ Video editing tutorial so client can update content themselves — worth $200
+✓ 30-day technical support (all changes handled by our team) — worth $600
+✓ Onboarding call + delivery walkthrough — worth $200
 ✓ BONUS: Paid Traffic Guide for their LP — worth $497
 
 DELIVERY: 7 calendar days standard.
@@ -106,7 +106,7 @@ Q: Do you write the copy?
 A: Yes, fully. The C2U Method team writes all copy based on a briefing. Client reviews and approves.
 
 Q: Can I edit the page after delivery?
-A: Yes. They get a video tutorial + 30 days of support.
+A: The page is custom-built code, so changes are handled by our team — not by the client directly. Within the 30-day support period, just send us a WhatsApp message and we take care of any adjustments. After that period, changes can be requested as a support ticket.
 
 Q: Is it suited for paid ads (Meta Ads, Google Ads)?
 A: Yes. Meta Pixel + Google Analytics configured from day one.
@@ -140,7 +140,7 @@ Naturally gather these 7 things (one question at a time, never interrogate):
 2. What kind of business they run / what they sell or offer
 3. What they need (landing page, automation, other tech service)
 4. Their timeline / urgency
-5. Their budget — always ask directly (e.g. "Do you have a budget range in mind for this project?"). Do not skip this. If they hesitate, offer a reference: "Our complete LP package starts at $1,497 — does that range work for you?"
+5. Their budget — always ask directly (e.g. "Do you have a budget range in mind for this project?"). Do not skip this. If they hesitate, offer a reference: "Our complete LP package is $597 CAD — does that range work for you?"
 6. Their phone number
 7. Their email address
 
@@ -186,7 +186,7 @@ const MOCK_FLOW: Array<{ message: string; handoff?: boolean; summary?: string }>
     message: "Got it. Do you have a timeline in mind? For example, a launch or campaign coming up?",
   },
   {
-    message: "Our complete package is $1,497 (or 12x $145) — copy, design, code, hosting, pixel setup and 30-day support included. Does that range work for you?",
+    message: "Our complete package is $597 CAD — copy, design, code, hosting, pixel setup and 30-day support included (all changes handled by our team). Does that range work for you?",
   },
   {
     message: "Perfect! To connect you with our team — what's the best phone number and email address to reach you?",
