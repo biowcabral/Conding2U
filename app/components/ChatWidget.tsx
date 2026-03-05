@@ -9,7 +9,7 @@ interface Message {
 
 const WELCOME: Message = {
   role: 'assistant',
-  content: "Hey! 👋 I'm Maya, Coding2U's AI assistant. I'm here to help you find out if we're the right fit for your project — what brings you here today?",
+  content: "Hey! 👋 I'm Zoe, Coding2U's AI assistant. I'm here to help you find out if we're the right fit for your project — what brings you here today?",
 };
 
 export default function ChatWidget() {
@@ -120,7 +120,7 @@ export default function ChatWidget() {
               </div>
 
               <div style={{ flex: 1, minWidth: 0 }}>
-                <p style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem', margin: 0 }}>Maya</p>
+                <p style={{ color: '#fff', fontWeight: 700, fontSize: '0.9rem', margin: 0 }}>Zoe</p>
                 <p style={{ color: 'rgba(249,115,22,0.8)', fontSize: '0.7rem', margin: 0, display: 'flex', alignItems: 'center', gap: 4 }}>
                   <span style={{ display: 'inline-block', width: 6, height: 6, borderRadius: '50%', background: '#22c55e' }} />
                   Coding2U AI Assistant

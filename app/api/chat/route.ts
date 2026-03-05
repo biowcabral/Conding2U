@@ -11,7 +11,7 @@ async function notifyTeamViaWhatsApp(summary: string): Promise<void> {
     return;
   }
 
-  const text = `[Coding2U] Novo lead qualificado pela Maya: ${summary.replace(/\n/g, ' | ')}`;
+  const text = `[Coding2U] Novo lead qualificado pela Zoe: ${summary.replace(/\n/g, ' | ')}`;
   const url  = `https://api.callmebot.com/whatsapp.php?phone=${phone}&text=${encodeURIComponent(text)}&apikey=${apiKey}`;
 
   try {
