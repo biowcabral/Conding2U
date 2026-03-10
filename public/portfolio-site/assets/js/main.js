@@ -404,7 +404,7 @@
           duration: 0.6,
           ease: 'power2.out',
           onUpdate: () => {
-            el.textContent = Math.round(obj.val).toLocaleString('pt-BR');
+            el.textContent = Math.round(obj.val).toLocaleString('en-CA');
           },
         });
       });
@@ -435,20 +435,22 @@
       const svc   = document.getElementById('cf-service').value;
 
       if (!name || !email || !svc) {
-        showFeedback('error', 'Por favor, preencha todos os campos obrigatórios.');
+        const isEn = document.documentElement.dataset.lang === 'en';
+        showFeedback('error', isEn ? 'Please fill in all required fields.' : 'Por favor, preencha todos os campos obrigatórios.');
         return;
       }
 
       const btn = form.querySelector('.form-submit');
       btn.disabled = true;
-      btn.textContent = '⏳ Enviando...';
+      btn.textContent = document.documentElement.dataset.lang === 'en' ? '⏳ Sending...' : '⏳ Enviando...';
 
       // Simulação de envio (integre seu backend/Formspree aqui)
       setTimeout(() => {
-        showFeedback('success', '✅ Mensagem enviada! Retornarei em até 24h.');
+        const isEn = document.documentElement.dataset.lang === 'en';
+        showFeedback('success', isEn ? '✅ Message sent! I\'ll get back to you within 24h.' : '✅ Mensagem enviada! Retornarei em até 24h.');
         form.reset();
         btn.disabled = false;
-        btn.textContent = btn.dataset.pt || 'Enviar Mensagem →';
+        btn.textContent = isEn ? 'Send Message →' : 'Enviar Mensagem →';
       }, 1800);
     });
 
@@ -499,6 +501,12 @@
       document.title = next === 'en'
         ? 'Coding2U — Landing Pages & Automations'
         : 'Coding2U — Landing Pages & Automações';
+
+      // Update form feedback text based on language
+      const formBtn = document.querySelector('.form-submit');
+      if (formBtn && !formBtn.disabled) {
+        formBtn.textContent = next === 'en' ? 'Send Message →' : 'Enviar Mensagem →';
+      }
     });
   }
 
@@ -554,7 +562,10 @@
       white-space: nowrap;
     `;
 
-    const text = 'Landing Pages ✦ Automações ✦ ChatBots ✦ Funis de Venda ✦ E-mail Marketing ✦ Integrações ✦ ';
+    const isEn = document.documentElement.dataset.lang === 'en';
+    const text = isEn
+      ? 'Landing Pages ✦ Automations ✦ ChatBots ✦ Sales Funnels ✦ Email Marketing ✦ Integrations ✦ '
+      : 'Landing Pages ✦ Automações ✦ ChatBots ✦ Funis de Venda ✦ E-mail Marketing ✦ Integrações ✦ ';
     const track = document.createElement('div');
     track.style.cssText = 'display:inline-block;';
     track.innerHTML = (text + text + text).split('').map(c => `<span style="display:inline">${c}</span>`).join('');

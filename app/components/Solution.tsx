@@ -6,18 +6,18 @@ import { useReveal } from './useReveal';
 const PILLARS = [
   {
     icon: '🧠',
-    title: 'Behavioral Neuroscience',
-    desc: 'We use proven psychological triggers — loss aversion, social proof, anchoring and scarcity — to guide visitors toward purchase naturally and ethically.',
+    title: 'Conversion-Driven Architecture',
+    desc: 'We engineer every page with proven UX patterns: strategic layout, clear CTAs, and trust signals to guide visitors toward action naturally and effectively.',
   },
   {
-    icon: '✍️',
-    title: 'Copy That Connects & Converts',
-    desc: 'Words that speak directly to your ideal customer’s pain and desire. No jargon, no fluff. Every sentence has one purpose: move the reader toward the click.',
+    icon: '⌨️',
+    title: 'Clean Code & Performance',
+    desc: 'Hand-crafted code, optimized assets, and modern frameworks. Our pages load fast, rank well, and work flawlessly on every device.',
   },
   {
     icon: '🎯',
-    title: 'Action-Oriented Design',
-    desc: 'Strategic visual hierarchy, anchoring elements and CTAs placed at the exact moments when the brain is ready to act.',
+    title: 'Pixel-Perfect Design',
+    desc: 'Strategic visual hierarchy, responsive layouts, and polished UI components built with attention to every detail.',
   },
 ];
 
@@ -35,12 +35,12 @@ export default function Solution() {
           </span>
           <h2 className={`text-3xl sm:text-4xl font-black mb-4 ${variant.textPrimary}`}>
             Introducing the{' '}
-            <span className={variant.accentText}>C2U Conversion Method</span>
+            <span className={variant.accentText}>C2U Development Method</span>
           </h2>
           <p className={`text-base max-w-xl mx-auto ${variant.textMuted}`}>
             It’s not about having a pretty page. It’s about having a page{' '}
-            <strong className={variant.textPrimary}>scientifically engineered</strong>{' '}
-            to turn visitors into customers.
+            <strong className={variant.textPrimary}>engineered by developers</strong>{' '}
+            to perform and convert.
           </p>
         </div>
 

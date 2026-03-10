@@ -1,11 +1,10 @@
 'use client';
 
 import { useVariant } from './VariantProvider';
-import { WHATSAPP_URL } from './types';
 
 const STATS = [
-          { value: '312+', label: 'pages delivered' },
-  { value: '7x', label: 'avg. conversion boost' },
+          { value: '150+', label: 'projects delivered' },
+  { value: '< 2s', label: 'avg. load time' },
   { value: '7 days', label: 'delivery time' },
   { value: '97%', label: 'satisfied clients' },
 ];
@@ -45,51 +44,45 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2" style={{ background: variant.accentHex }} />
           </span>
           <span style={{ color: variant.accentHex }}>
-            ATTENTION: While you’re reading this, your competitors are closing new clients online
+            Your competitors already have a professional page. Do you?
           </span>
         </div>
 
-        {/* Main headline — loss aversion + pattern interrupt */}
+        {/* Main headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 animate-fade-in-up">
-          Your business is
+          Your business deserves
           <br />
           <span className={variant.shimmerClass}>
-            losing sales every day
+            a page built by developers
           </span>
           <br />
-          <span className="text-white">because of a weak page</span>
+          <span className="text-white">not a DIY template</span>
         </h1>
 
-        {/* Subheadline — desire + relief */}
+        {/* Subheadline */}
         <p
           className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200"
           style={{ color: 'rgba(255,255,255,0.85)' }}
         >
-          We build landing pages that use{' '}
-          <strong className="text-white">behavioral neuroscience</strong>{' '}
-          to turn visitors into paying customers —{' '}
-          <strong className="text-white">in just 7 days</strong>.
+          We build{' '}
+          <strong className="text-white">fast, responsive, hand-coded</strong>{' '}
+          landing pages that look professional and perform.{' '}
+          <strong className="text-white">delivered in 7 days</strong>.
         </p>
 
         <p
           className={`text-base italic mb-10 animate-fade-in-up delay-300 ${variant.heroAccent}`}
         >
-          &ldquo;No more guessing. Your competitors already have a page that sells — yours will too.&rdquo;
+          &ldquo;Clean code, pixel-perfect design, and a page that actually works. Built by real developers.&rdquo;
         </p>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up delay-400">
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-form"
             className={`group flex items-center gap-3 px-8 py-4 rounded-full text-base font-black transition-all duration-300 hover:scale-105 ${variant.btnPrimary} ${variant.btnPrimaryText} ${variant.glowClass} shadow-2xl`}
           >
-            <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.847L.057 23.486a.5.5 0 0 0 .614.612l5.52-1.445A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.5-5.192-1.374l-.372-.215-3.874 1.015 1.036-3.767-.234-.382A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-            </svg>
-            I want my page now
+            Get a free quote
             <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
           </a>
 

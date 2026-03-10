@@ -15,16 +15,16 @@ export default function AmplifyPain() {
         </span>
 
         <h2 className={`text-3xl sm:text-4xl font-black mb-6 ${variant.textPrimary}`}>
-          How much is this problem costing{' '}
-          <span className={variant.accentText}>your business?</span>
+          What a weak page is costing{' '}
+          <span className={variant.accentText}>your business</span>
         </h2>
 
-        {/* Loss calculation — anchoring + loss aversion */}
+        {/* Loss calculation */}
         <div className={`p-8 rounded-3xl mb-10 shadow-xl ${variant.cardBg} ${variant.cardBorder}`}>
           <p className={`text-lg mb-6 ${variant.textSecondary}`}>
-            Let’s be direct. Imagine you get{' '}
+            Let’s look at the numbers. Imagine you get{' '}
             <strong className={variant.textPrimary}>100 visitors per month</strong>{' '}
-            on your current profile or website.
+            on your current site or profile.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-6 mb-8">
@@ -82,7 +82,7 @@ export default function AmplifyPain() {
           <div className={`p-5 rounded-2xl`} style={{ background: `${variant.accentHex}15`, border: `1px solid ${variant.accentHex}30` }}>
             <p className={`text-xl font-black ${variant.textPrimary}`}>
               In 1 year without a professional LP:{' '}
-              <span className="text-red-500">$72,000 left on the table.</span>
+              <span className="text-red-500">$72,000 in missed opportunities.</span>
             </p>
             <p className={`text-sm mt-2 ${variant.textMuted}`}>
               This calculation is conservative. Businesses with higher ticket prices multiply this number quickly.
@@ -92,7 +92,7 @@ export default function AmplifyPain() {
 
         <p className={`text-lg font-semibold italic ${variant.textSecondary}`}>
           &ldquo;The question isn’t whether you can afford a professional landing page.
-          <br />The question is: how much will you keep losing without one?&rdquo;
+          <br />The question is: how long can you keep running without one?&rdquo;
         </p>
       </div>
     </section>

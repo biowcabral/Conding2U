@@ -10,32 +10,29 @@ const FAQS = [
     a: 'Our standard delivery is 7 calendar days from briefing approval. For urgent projects, we offer express delivery in 72 hours for an additional fee.',
   },
   {
-    q: 'Do I need a domain and hosting before hiring?',
-    a: 'Not at all. One year of hosting is already included in the package. If you want to use your own domain, we help configure it. If you don’t have one, we recommend options starting at around $10/year.',
-  },
-  {
+
     q: 'How does the 30-day guarantee work?',
-    a: 'Simple: if within 30 days of delivery you’re not satisfied for any reason, just send us a WhatsApp message and we refund 100% of the amount. No questions, no hassle.',
+    a: 'Simple: if within 30 days of delivery you\u2019re not satisfied for any reason, just send us an email and we refund 100% of the amount. No questions, no hassle.',
   },
   {
-    q: 'Do you write the copy or do I need to provide it?',
-    a: 'We create everything. After the initial diagnosis, our copy team writes all the content based on the C2U Method — persuasive copy, high-impact headlines and strategic CTAs. You review and approve.',
+    q: 'Do you handle the content or do I need to provide it?',
+    a: 'We handle the full development. After the initial consultation, our team structures all the content based on your input and builds the page end-to-end. You review and approve.',
   },
   {
     q: 'After delivery, can I request changes to the page?',
-    a: 'Absolutely. You have 30 days of included technical support after delivery — just send us a message on WhatsApp and our team handles any adjustments for you. No technical knowledge required on your end.',
+    a: 'Absolutely. You have 30 days of included technical support after delivery \u2014 just send us an email and our team handles any adjustments for you. No technical knowledge required on your end.',
   },
   {
-    q: 'Is the landing page suitable for paid ads (Meta Ads, Google Ads)?',
-    a: 'Absolutely. Our pages are optimized for paid traffic. We configure the Meta Pixel and Google Tag Manager, ensuring your tracking works correctly from day one.',
+    q: 'Is the landing page optimized for search engines?',
+    a: 'Yes. Our pages are built with semantic HTML, structured data, and optimized meta tags. We also configure Google Analytics so you can track performance from day one.',
   },
   {
-    q: 'What’s the difference between a landing page and a website?',
-    a: 'A website has multiple pages and goals. A landing page has a single objective: convert. It’s designed to eliminate distractions and guide the visitor to one action — whether that’s buying, scheduling, or getting in touch.',
+    q: 'What\u2019s the difference between a landing page and a website?',
+    a: 'A website has multiple pages and goals. A landing page has a single objective: convert. It\u2019s designed to eliminate distractions and guide the visitor to one action, whether that\u2019s buying, scheduling, or getting in touch.',
   },
   {
     q: 'How do I get started?',
-    a: 'Simple: click the WhatsApp button, send a message and our team schedules the free diagnosis. Within 24 hours you’ll have a personalized proposal in hand.',
+    a: 'Simple: fill out the contact form on this page and our team will reach out to schedule a free consultation. Within 24 hours you\u2019ll have a personalized proposal in hand.',
   },
 ];
 

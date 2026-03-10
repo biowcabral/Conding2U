@@ -6,33 +6,33 @@ import { useReveal } from './useReveal';
 const PAINS = [
   {
     icon: '😤',
-    title: 'A generic site no one trusts',
-    desc: 'You have a pretty website, but no persuasive copy. People arrive, don’t understand your value proposition, and leave within 30 seconds.',
+    title: 'A template site that looks like everyone else',
+    desc: 'You used a drag-and-drop builder and ended up with something generic. Visitors can’t tell you apart from the competition.',
   },
   {
     icon: '💸',
-    title: 'Spending on ads with no results',
-    desc: 'You invest money in paid traffic, but the landing page doesn’t convert. Every visitor that bounces is money thrown away.',
+    title: 'Slow page that drives visitors away',
+    desc: 'Your site takes too long to load, especially on mobile. Every extra second costs you visitors who simply leave.',
   },
   {
     icon: '😰',
-    title: 'Losing clients to competitors',
-    desc: 'While you’re using an Instagram link or a makeshift page, your competitor has a page that sells while they sleep.',
+    title: 'Broken on mobile devices',
+    desc: 'Over 70% of your visitors are on a phone, but your page wasn’t built mobile-first. Buttons overlap, text is unreadable.',
   },
   {
     icon: '🤯',
-    title: 'No idea why nobody buys',
-    desc: 'You have a great product, but somewhere along the way trust breaks. And you never figure out what went wrong.',
+    title: 'No idea how to get online properly',
+    desc: 'You have a great product or service but no professional online presence. Building a page from scratch feels overwhelming.',
   },
   {
     icon: '⏳',
-    title: 'Wasting hours explaining everything',
-    desc: 'You repeat the same pitch on WhatsApp for hours. A landing page does that work for you, 24 hours a day.',
+    title: 'Wasting hours with DIY tools',
+    desc: 'You’ve spent weekends fighting with Wix or WordPress, and still don’t have something you’re proud of.',
   },
   {
     icon: '📉',
-    title: 'Cold leads that never close',
-    desc: 'Without a page that qualifies and warms leads, you get contacts with no purchase intent — wasting your time and energy.',
+    title: 'No trust from potential clients',
+    desc: 'Without a professional page, leads doubt your credibility. A polished web presence is the first impression you make.',
   },
 ];
 
@@ -49,10 +49,10 @@ export default function PainPoints() {
             Does this sound familiar?
           </span>
           <h2 className={`text-3xl sm:text-4xl font-black mb-4 ${variant.textPrimary}`}>
-            Do you recognize any of these situations?
+            Sound familiar?
           </h2>
           <p className={`text-base max-w-xl mx-auto ${variant.textMuted}`}>
-            If you identified with even one of these problems, you’re leaving money on the table right now.
+            If any of these hit close to home, it’s time to invest in a properly built page.
           </p>
         </div>
 
@@ -74,13 +74,13 @@ export default function PainPoints() {
           ))}
         </div>
 
-        {/* Transition bridge — dopamine hook */}
+        {/* Transition bridge */}
         <div className={`mt-14 p-8 rounded-3xl text-center ${variant.sectionAlt}`}>
           <p className={`text-xl sm:text-2xl font-black mb-3 ${variant.textPrimary}`}>
-            ❌ These problems have a solution.
+            ✅ All of these are solved with a professionally built page.
           </p>
           <p className={`text-base max-w-lg mx-auto ${variant.textSecondary}`}>
-            But while you don’t act, every day that passes is one more day losing clients to whoever already solved this.
+            You don’t need to learn to code. You need developers who build it right.
           </p>
         </div>
       </div>

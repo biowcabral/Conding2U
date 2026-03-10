@@ -2,7 +2,6 @@
 
 import { useVariant } from './VariantProvider';
 import { useReveal } from './useReveal';
-import { WHATSAPP_URL } from './types';
 
 export default function Guarantee() {
   const { variant } = useVariant();
@@ -33,7 +32,7 @@ export default function Guarantee() {
           </h2>
 
           <p className={`text-base leading-relaxed mb-8 ${variant.textSecondary}`}>
-            If within 30 days you’re not 100% satisfied with your landing page — whether it’s the design, the copy, or any other reason — just let us know.
+            If within 30 days you're not 100% satisfied with your landing page, whether it's the design, the code, or any other reason, just let us know.
             <br /><br />
             <strong className={variant.textPrimary}>We refund every cent you invested.</strong> No bureaucracy, no questions, no hassle.
             <br /><br />
@@ -59,12 +58,10 @@ export default function Guarantee() {
           </div>
 
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-form"
             className={`inline-flex items-center gap-2 px-8 py-4 rounded-full text-base font-black transition-all duration-300 hover:scale-105 ${variant.btnPrimary} ${variant.btnPrimaryText}`}
           >
-            I want my LP with guarantee
+            Get started risk-free
           </a>
         </div>
       </div>

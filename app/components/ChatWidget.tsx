@@ -9,7 +9,7 @@ interface Message {
 
 const WELCOME: Message = {
   role: 'assistant',
-  content: "Hey! 👋 I'm Zoe, Coding2U's AI assistant. I'm here to help you find out if we're the right fit for your project — what brings you here today?",
+  content: "Hey! 👋 I'm Zoe, Coding2U's AI assistant. I'm here to help you find out if we're the right fit for your project. What brings you here today?",
 };
 
 export default function ChatWidget() {
@@ -61,7 +61,7 @@ export default function ChatWidget() {
     } catch {
       setMessages(prev => [
         ...prev,
-        { role: 'assistant', content: "Sorry, something went wrong. Please try again or reach out via WhatsApp!" },
+        { role: 'assistant', content: "Sorry, something went wrong. Please try again or reach out via the contact form!" },
       ]);
     } finally {
       setLoading(false);

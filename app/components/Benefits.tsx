@@ -6,13 +6,13 @@ import { useReveal } from './useReveal';
 const BENEFITS = [
   { icon: '📱', title: 'Mobile-First Responsive', desc: '73% of traffic comes from mobile. Your page loads perfectly on any device.' },
   { icon: '⚡', title: 'Speed Optimized', desc: 'Every second of delay cuts conversion by 7%. Our pages load in under 2 seconds.' },
-  { icon: '🧠', title: 'High-Conversion Copy', desc: 'Every word is strategically chosen to guide the visitor toward the click. No guesswork.' },
-  { icon: '💬', title: 'WhatsApp / CRM Integration', desc: 'Direct button to your WhatsApp or email funnel. Leads arrive ready to convert.' },
-  { icon: '🔍', title: 'Basic SEO Included', desc: 'Optimized meta tags, titles, and structure that Google loves. Show up where your clients search.' },
-  { icon: '📊', title: 'Pixel & Analytics', desc: 'Google Analytics and Meta Pixel installed and configured. Real data for informed decisions.' },
+  { icon: '🧠', title: 'Conversion-Focused Structure', desc: 'Every section is strategically structured to guide the visitor through your page. Built for results, not just looks.' },
+  { icon: '💬', title: 'Contact Form Integration', desc: 'Built-in contact forms and integrations so leads reach you directly.' },
+  { icon: '🔍', title: 'On-page SEO Included', desc: 'Semantic HTML, optimized meta tags, and structured data. Built for search engines from the ground up.' },
+  { icon: '📊', title: 'Analytics Integration', desc: 'Google Analytics installed and configured so you can track your page performance.' },
   { icon: '🔒', title: 'SSL + 1-Year Hosting', desc: 'Security certificate and hosting included. Zero technical headaches for you.' },
   { icon: '🛠️', title: '30-Day Support', desc: 'After delivery you have 30 days to request adjustments at no extra cost. You’re never alone.' },
-  { icon: '📹', title: 'Onboarding Walkthrough', desc: 'Video call walking you through everything delivered — how the page works, what\'s connected, and how to request changes.' },
+  { icon: '📹', title: 'Onboarding Walkthrough', desc: 'Video call walking you through everything delivered: how the page works, what\'s connected, and how to request changes.' },
 ];
 
 export default function Benefits() {
@@ -31,7 +31,7 @@ export default function Benefits() {
             <span className={variant.accentText}>truly convert</span>
           </h2>
           <p className={`text-base max-w-lg mx-auto ${variant.textMuted}`}>
-            We don’t just deliver code. We deliver a complete conversion strategy.
+            Professional development, clean code, and everything configured. Ready to go live.
           </p>
         </div>
 
@@ -57,20 +57,6 @@ export default function Benefits() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bonus highlight */}
-        <div
-          className="mt-10 p-6 rounded-2xl text-center"
-          style={{ background: `${variant.accentHex}10`, border: `1px dashed ${variant.accentHex}50` }}
-        >
-          <span className="text-2xl">🎁</span>
-          <p className={`mt-2 font-black text-lg ${variant.textPrimary}`}>
-            EXCLUSIVE BONUS: Paid Traffic Guide for Your LP
-          </p>
-          <p className={`text-sm mt-1 ${variant.textMuted}`}>
-            Included in your package — learn how to drive qualified visitors to your new page from day one.
-          </p>
         </div>
       </div>
     </section>

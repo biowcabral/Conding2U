@@ -2,31 +2,30 @@
 
 import { useVariant } from './VariantProvider';
 import { useReveal } from './useReveal';
-import { WHATSAPP_URL } from './types';
 
 const STEPS = [
   {
     step: '01',
     icon: '💬',
-    title: 'Free Diagnosis',
+    title: 'Free Consultation',
     duration: 'Day 1',
-    desc: 'You talk with our team on WhatsApp. We learn about your business, your ideal customer, your competitors, and your goals. No cost, no commitment.',
-    detail: 'Market analysis + your ideal customer’s pains and desires mapped out',
+    desc: 'You talk with our team via email or call. We learn about your business, your goals, and your technical needs. No cost, no commitment.',
+    detail: 'Requirements analysis + project scope defined',
   },
   {
     step: '02',
-    icon: '✍️',
-    title: 'Strategic Creation',
+    icon: '⌨️',
+    title: 'Design & Development',
     duration: 'Days 2–6',
-    desc: 'Our team writes the copy, designs and builds your landing page using the C2U Method. You follow progress and approve.',
-    detail: 'Copy + Design + Development + Basic SEO + Integrations',
+    desc: 'Our developers design and build your landing page using the C2U Method. You follow progress and approve.',
+    detail: 'UI/UX Design + Development + On-page SEO + Integrations',
   },
   {
     step: '03',
     icon: '🚀',
     title: 'Delivery & Support',
     duration: 'Day 7',
-    desc: 'Your page goes live. You get full access, a usage walkthrough, and 30 days of support for any adjustments. Ready to sell.',
+    desc: 'Your page goes live. You get full access, a usage walkthrough, and 30 days of support for any adjustments. Ready to convert.',
     detail: '30-day support + user guide + delivery call',
   },
 ];
@@ -103,15 +102,13 @@ export default function HowItWorks() {
         {/* CTA after steps */}
         <div className="text-center mt-12">
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-form"
             className={`inline-flex items-center gap-3 px-8 py-4 rounded-full text-base font-black transition-all duration-300 hover:scale-105 shadow-xl ${variant.btnPrimary} ${variant.btnPrimaryText}`}
           >
-            Start my free diagnosis →
+            Start my free consultation →
           </a>
           <p className={`text-xs mt-3 ${variant.textMuted}`}>
-            No diagnosis fee. No commitment.
+            No consultation fee. No commitment.
           </p>
         </div>
       </div>

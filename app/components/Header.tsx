@@ -1,18 +1,45 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useVariant } from './VariantProvider';
-import { WHATSAPP_URL } from './types';
 
 export default function Header() {
   const { variant } = useVariant();
   const [scrolled, setScrolled] = useState(false);
+  const [glitch, setGlitch]     = useState(false);
+  const glitchRef   = useRef(false);
+  const glitchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const autoTimer   = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const triggerGlitch = () => {
+    if (glitchRef.current) return;
+    glitchRef.current = true;
+    setGlitch(true);
+    glitchTimer.current = setTimeout(() => {
+      setGlitch(false);
+      glitchRef.current = false;
+    }, 380);
+  };
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  useEffect(() => {
+    const schedule = () => {
+      autoTimer.current = setTimeout(() => {
+        triggerGlitch();
+        schedule();
+      }, 4000 + Math.random() * 5000);
+    };
+    schedule();
+    return () => {
+      if (autoTimer.current)   clearTimeout(autoTimer.current);
+      if (glitchTimer.current) clearTimeout(glitchTimer.current);
+    };
   }, []);
 
   return (
@@ -22,14 +49,46 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="Coding2U"
-            width={140}
-            height={40}
-            priority
-            className="h-9 w-auto object-contain"
-          />
+          <>
+          <style>{`
+            @keyframes c2uGlitchR {
+              0%,100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+              10%     { clip-path: inset(10% 0 60% 0); transform: translate(-3px, 1px); }
+              25%     { clip-path: inset(55% 0 20% 0); transform: translate(3px, -1px); }
+              40%     { clip-path: inset(30% 0 45% 0); transform: translate(-2px, 2px); }
+              60%     { clip-path: inset(70% 0 5%  0); transform: translate(2px, -2px); }
+              80%     { clip-path: inset(5%  0 80% 0); transform: translate(-1px, 1px); }
+            }
+            @keyframes c2uGlitchB {
+              0%,100% { clip-path: inset(0 0 100% 0); transform: translate(0); }
+              10%     { clip-path: inset(60% 0 10% 0); transform: translate(3px, -2px); }
+              30%     { clip-path: inset(20% 0 55% 0); transform: translate(-3px, 1px); }
+              50%     { clip-path: inset(45% 0 30% 0); transform: translate(2px, 2px); }
+              70%     { clip-path: inset(5%  0 70% 0); transform: translate(-2px, -1px); }
+              90%     { clip-path: inset(80% 0 5%  0); transform: translate(1px, -1px); }
+            }
+            .c2u-glitch-r { animation: c2uGlitchR 0.38s steps(1) both; mix-blend-mode: screen; filter: saturate(4) hue-rotate(-20deg); }
+            .c2u-glitch-b { animation: c2uGlitchB 0.38s steps(1) both; mix-blend-mode: screen; filter: saturate(4) hue-rotate(160deg); }
+          `}</style>
+          <div style={{ position: 'relative', display: 'inline-flex' }} onMouseEnter={triggerGlitch}>
+            <Image
+              src="/logo.png"
+              alt="Coding2U"
+              width={140}
+              height={40}
+              priority
+              className="h-9 w-auto object-contain"
+            />
+            {glitch && <>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="" aria-hidden className="c2u-glitch-r"
+                style={{ position: 'absolute', top: 0, left: 0, height: 36, width: 'auto', pointerEvents: 'none' }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="" aria-hidden className="c2u-glitch-b"
+                style={{ position: 'absolute', top: 0, left: 0, height: 36, width: 'auto', pointerEvents: 'none' }} />
+            </>}
+          </div>
+          </>
           <span className={`hidden sm:inline text-xs font-medium px-2 py-0.5 rounded-full ${variant.badgeBg} ${variant.badgeText}`}>
             Landing Pages
           </span>
@@ -57,16 +116,10 @@ export default function Header() {
 
         {/* CTA */}
         <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact-form"
           className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-200 shadow-md hover:scale-105 ${variant.btnPrimary} ${variant.btnPrimaryText}`}
         >
-          <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.847L.057 23.486a.5.5 0 0 0 .614.612l5.52-1.445A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.66-.5-5.192-1.374l-.372-.215-3.874 1.015 1.036-3.767-.234-.382A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-          </svg>
-          <span>Talk on WhatsApp</span>
+          <span>Get in Touch</span>
         </a>
       </div>
     </header>

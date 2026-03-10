@@ -3,12 +3,12 @@
 import { useVariant } from './VariantProvider';
 
 const TICKER_ITEMS = [
-  '✅ Dr. Leonardo just signed up',
-  '⭐ Estudio Forma tripled their conversions',
-  '� Every month without a converting page = revenue left on the table',
-  '✅ Manu Coaching sold out in 18 days',
-  '📈 TechParts generated +$84K in 90 days',
-  '✅ Ativo Imóveis cut cost-per-lead by 77%',
+  '✅ New project delivered for Dr. Leonardo',
+  '⭐ Estudio Forma: page loads in 1.2s',
+  '⚡ Hand-coded, no templates, no page builders',
+  '✅ Manu Coaching: launched in 5 days',
+  '💻 Built with Next.js, Tailwind & modern stack',
+  '✅ Ativo Real Estate: mobile-first responsive',
   '⚡ Guaranteed delivery in 7 days',
   '🛡️ Unconditional 30-day guarantee',
 ];
