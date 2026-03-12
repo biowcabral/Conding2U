@@ -9,7 +9,7 @@ const TESTIMONIALS = [
     role: 'Chiropractor',
     photo: 'SM',
     stars: 5,
-    text: 'I was hesitant to invest in a landing page, but the Coding2U team delivered a beautiful, fast page and within 2 weeks my schedule was fully booked. The quality of the code is impressive.',
+    text: 'I was hesitant to invest in a customer acquisition page, but the Coding2U team delivered a beautiful, fast page and within 2 weeks my schedule was fully booked. The quality of the code is impressive.',
     highlight: 'fully booked in 2 weeks',
     color: '#f59e0b',
   },
@@ -18,7 +18,7 @@ const TESTIMONIALS = [
     role: 'E-commerce Owner',
     photo: 'JC',
     stars: 5,
-    text: 'Our old site was slow and looked dated. Coding2U rebuilt it from scratch. Lightning fast, works perfectly on mobile, and our conversion rate jumped from 0.8% to 6.2%. Real developers make a real difference.',
+    text: 'Our old site was slow and looked dated. Coding2U rebuilt it from scratch. Lightning fast, works perfectly on mobile, and our conversion rate jumped from 0.8% to 6.2%. Real software developers make a real difference.',
     highlight: 'conversion rate jumped to 6.2%',
     color: '#ef4444',
   },
@@ -114,7 +114,7 @@ export default function Testimonials() {
           style={{ background: `${variant.accentHex}08`, border: `1px solid ${variant.accentHex}20` }}
         >
           {[
-            { value: '312+', label: 'pages created' },
+            { value: '312+', label: 'pages engineered' },
             { value: '4.9⭐', label: 'average rating' },
             { value: '97%', label: 'satisfied clients' },
             { value: '$2.1M+', label: 'generated for clients' },

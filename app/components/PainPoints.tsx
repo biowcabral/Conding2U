@@ -77,10 +77,10 @@ export default function PainPoints() {
         {/* Transition bridge */}
         <div className={`mt-14 p-8 rounded-3xl text-center ${variant.sectionAlt}`}>
           <p className={`text-xl sm:text-2xl font-black mb-3 ${variant.textPrimary}`}>
-            ✅ All of these are solved with a professionally built page.
+            ✅ All of these are solved with a professionally engineered page.
           </p>
           <p className={`text-base max-w-lg mx-auto ${variant.textSecondary}`}>
-            You don’t need to learn to code. You need developers who build it right.
+            You don't need to learn to code. You need software developers who engineer it right.
           </p>
         </div>
       </div>

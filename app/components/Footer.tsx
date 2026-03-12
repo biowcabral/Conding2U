@@ -21,7 +21,7 @@ export default function Footer() {
               className="h-10 w-auto object-contain mb-1"
             />
             <p className={`text-xs mt-1 ${variant.textMuted}`}>
-              Custom-built landing pages by real developers.
+              Customer acquisition pages engineered by software developers.
             </p>
           </div>
 
@@ -29,7 +29,6 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm">
             {[
               { label: 'How it works', href: '#how-it-works', external: false },
-              { label: 'Portfolio', href: '/portfolio-site/', external: true },
               { label: 'Pricing', href: '#pricing', external: false },
             ].map(({ label, href, external }) => (
               <a

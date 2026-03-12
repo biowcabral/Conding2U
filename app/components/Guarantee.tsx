@@ -32,7 +32,7 @@ export default function Guarantee() {
           </h2>
 
           <p className={`text-base leading-relaxed mb-8 ${variant.textSecondary}`}>
-            If within 30 days you're not 100% satisfied with your landing page, whether it's the design, the code, or any other reason, just let us know.
+            If within 30 days you're not 100% satisfied with your customer acquisition page, whether it's the design, the code, or any other reason, just let us know.
             <br /><br />
             <strong className={variant.textPrimary}>We refund every cent you invested.</strong> No bureaucracy, no questions, no hassle.
             <br /><br />

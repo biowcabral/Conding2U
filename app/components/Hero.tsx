@@ -64,16 +64,16 @@ export default function Hero() {
           className="text-lg sm:text-xl max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200"
           style={{ color: 'rgba(255,255,255,0.85)' }}
         >
-          We build{' '}
+          We engineer{' '}
           <strong className="text-white">fast, responsive, hand-coded</strong>{' '}
-          landing pages that look professional and perform.{' '}
+          customer acquisition pages that look professional and convert.{' '}
           <strong className="text-white">delivered in 7 days</strong>.
         </p>
 
         <p
           className={`text-base italic mb-10 animate-fade-in-up delay-300 ${variant.heroAccent}`}
         >
-          &ldquo;Clean code, pixel-perfect design, and a page that actually works. Built by real developers.&rdquo;
+          &ldquo;Clean code, pixel-perfect design, and a page engineered to acquire customers. Built by real software developers.&rdquo;
         </p>
 
         {/* CTAs */}

@@ -80,7 +80,7 @@ export default function FinalCTA() {
           <p className="text-xs text-white/40 uppercase font-bold tracking-widest mb-4">What you get</p>
           <div className="space-y-3">
             <div className="flex justify-between text-sm">
-              <span className="text-white/60">Hand-coded landing page</span>
+              <span className="text-white/60">Hand-coded customer acquisition page</span>
               <span className="text-white/80 font-bold">Next.js + Tailwind</span>
             </div>
             <div className="flex justify-between text-sm">
@@ -146,8 +146,8 @@ export default function FinalCTA() {
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white text-sm focus:outline-none focus:border-white/30 transition-colors"
               >
                 <option value="" disabled className="text-black">Select...</option>
-                <option value="lp" className="text-black">Landing Page</option>
-                <option value="lp-multi" className="text-black">Multiple Landing Pages</option>
+                <option value="lp" className="text-black">Customer Acquisition Page</option>
+                <option value="lp-multi" className="text-black">Multiple Acquisition Pages</option>
                 <option value="custom" className="text-black">Custom Web Project</option>
               </select>
             </div>

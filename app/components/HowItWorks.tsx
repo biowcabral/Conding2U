@@ -17,7 +17,7 @@ const STEPS = [
     icon: '⌨️',
     title: 'Design & Development',
     duration: 'Days 2–6',
-    desc: 'Our developers design and build your landing page using the C2U Method. You follow progress and approve.',
+    desc: 'Our software developers design and build your customer acquisition page using the C2U Method. You follow progress and approve.',
     detail: 'UI/UX Design + Development + On-page SEO + Integrations',
   },
   {
@@ -25,7 +25,7 @@ const STEPS = [
     icon: '🚀',
     title: 'Delivery & Support',
     duration: 'Day 7',
-    desc: 'Your page goes live. You get full access, a usage walkthrough, and 30 days of support for any adjustments. Ready to convert.',
+    desc: 'Your page goes live. You get full access, a usage walkthrough, and 30 days of support for any adjustments. Ready to acquire customers.',
     detail: '30-day support + user guide + delivery call',
   },
 ];
@@ -43,7 +43,7 @@ export default function HowItWorks() {
           </span>
           <h2 className={`text-3xl sm:text-4xl font-black mb-4 ${variant.textPrimary}`}>
             From zero to your{' '}
-            <span className={variant.accentText}>sales machine</span>
+            <span className={variant.accentText}>customer acquisition machine</span>
             <br />in just 3 steps
           </h2>
           <p className={`text-base max-w-lg mx-auto ${variant.textMuted}`}>

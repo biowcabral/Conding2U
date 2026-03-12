@@ -4,7 +4,7 @@ import { useVariant } from './VariantProvider';
 import { useReveal } from './useReveal';
 
 const OFFER_ITEMS = [
-  { name: 'Full landing page (design + code)', value: '$3,500' },
+  { name: 'Full customer acquisition page (design + code)', value: '$3,500' },
   { name: 'Strategic UX/UI design', value: '$1,800' },
   { name: 'Mobile-first responsive development', value: '$800' },
   { name: 'Contact form + integrations', value: '$400' },
@@ -17,7 +17,7 @@ const OFFER_ITEMS = [
 
 const TOTAL_VALUE = '$8,330';
 const PRICE = '$997 CAD';
-const INSTALLMENTS = '12x $54 CAD';
+const INSTALLMENTS = '12x $83 CAD';
 
 export default function OfferStack() {
   const { variant } = useVariant();

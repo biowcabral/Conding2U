@@ -39,7 +39,7 @@ export default function Solution() {
           </h2>
           <p className={`text-base max-w-xl mx-auto ${variant.textMuted}`}>
             It’s not about having a pretty page. It’s about having a page{' '}
-            <strong className={variant.textPrimary}>engineered by developers</strong>{' '}
+            <strong className={variant.textPrimary}>engineered by software developers</strong>{' '}
             to perform and convert.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function Solution() {
           <p className={`relative text-xl sm:text-2xl font-black mb-4 ${variant.textPrimary}`}>
             The result?{' '}
             <span className={variant.accentText}>
-              A sales machine working 24/7
+              A customer acquisition engine working 24/7
             </span>
             {' '}while you focus on what matters.
           </p>

@@ -10,7 +10,7 @@ const PROJECTS = [
   {
     demo: '/portfolio-site/demos/clinica-estetica.html',
     category: 'lp' as Category,
-    tag: 'Landing Page',
+    tag: 'Customer Acquisition Page',
     name: 'Premium Aesthetic Clinic',
     result: '+340% in bookings in the first month',
     detail: 'Conversion jumped from 1.4% to 9.2% with persuasive copy + redesign',
@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     demo: '/portfolio-site/demos/infoproduto.html',
     category: 'lp' as Category,
-    tag: 'Landing Page',
+    tag: 'Customer Acquisition Page',
     name: 'Digital Info-Product',
     result: '$280k in sales at launch',
     detail: 'Page built in 7 days. Sold out first cohort in 18 days with zero paid ads',
@@ -30,10 +30,10 @@ const PROJECTS = [
   {
     demo: '/portfolio-site/demos/consultorio-medico.html',
     category: 'lp' as Category,
-    tag: 'Landing Page',
+    tag: 'Customer Acquisition Page',
     name: 'Medical Practice',
     result: 'Fully booked 48h after launch',
-    detail: 'Zero paid traffic. Google SEO LP ranked on page 1 in 3 weeks',
+    detail: 'Zero paid traffic. Google SEO page ranked on page 1 in 3 weeks',
     color: '#a78bfa',
     stats: [{ label: 'Time to full', value: '48h' }, { label: 'Traffic source', value: 'SEO' }, { label: '3-mo ROI', value: '820%' }],
   },
@@ -160,16 +160,8 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Full portfolio CTA */}
+        {/* Disclaimer */}
         <div className="text-center mt-12">
-          <a
-            href="/portfolio-site/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-sm border-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg ${variant.cardBorder} ${variant.textPrimary} hover:${variant.accentText}`}
-          >
-            View full portfolio site ↗
-          </a>
           <p className={`text-xs mt-4 ${variant.textMuted}`}>
             * Demonstrative projects. Real results vary by niche, traffic and marketing strategy.
           </p>

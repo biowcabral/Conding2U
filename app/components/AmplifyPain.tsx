@@ -36,7 +36,7 @@ export default function AmplifyPain() {
                 color: 'red',
               },
               {
-                scenario: 'With professional LP (8% conversion)',
+                scenario: 'With professional CAP (8% conversion)',
                 clients: '8 clients',
                 revenue: '$8,000/month',
                 color: 'accent',
@@ -81,7 +81,7 @@ export default function AmplifyPain() {
 
           <div className={`p-5 rounded-2xl`} style={{ background: `${variant.accentHex}15`, border: `1px solid ${variant.accentHex}30` }}>
             <p className={`text-xl font-black ${variant.textPrimary}`}>
-              In 1 year without a professional LP:{' '}
+              In 1 year without a professional CAP:{' '}
               <span className="text-red-500">$72,000 in missed opportunities.</span>
             </p>
             <p className={`text-sm mt-2 ${variant.textMuted}`}>
@@ -91,7 +91,7 @@ export default function AmplifyPain() {
         </div>
 
         <p className={`text-lg font-semibold italic ${variant.textSecondary}`}>
-          &ldquo;The question isn’t whether you can afford a professional landing page.
+          &ldquo;The question isn't whether you can afford a customer acquisition page.
           <br />The question is: how long can you keep running without one?&rdquo;
         </p>
       </div>

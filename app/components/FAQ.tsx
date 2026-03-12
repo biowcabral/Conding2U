@@ -6,7 +6,7 @@ import { useReveal } from './useReveal';
 
 const FAQS = [
   {
-    q: 'How long does it take to complete my landing page?',
+    q: 'How long does it take to complete my customer acquisition page?',
     a: 'Our standard delivery is 7 calendar days from briefing approval. For urgent projects, we offer express delivery in 72 hours for an additional fee.',
   },
   {
@@ -23,12 +23,12 @@ const FAQS = [
     a: 'Absolutely. You have 30 days of included technical support after delivery \u2014 just send us an email and our team handles any adjustments for you. No technical knowledge required on your end.',
   },
   {
-    q: 'Is the landing page optimized for search engines?',
+    q: 'Is the customer acquisition page optimized for search engines?',
     a: 'Yes. Our pages are built with semantic HTML, structured data, and optimized meta tags. We also configure Google Analytics so you can track performance from day one.',
   },
   {
-    q: 'What\u2019s the difference between a landing page and a website?',
-    a: 'A website has multiple pages and goals. A landing page has a single objective: convert. It\u2019s designed to eliminate distractions and guide the visitor to one action, whether that\u2019s buying, scheduling, or getting in touch.',
+    q: 'What\u2019s the difference between a customer acquisition page and a website?',
+    a: 'A website has multiple pages and goals. A customer acquisition page has a single objective: convert visitors into clients. It\u2019s engineered to eliminate distractions and guide the visitor to one action, whether that\u2019s buying, scheduling, or getting in touch.',
   },
   {
     q: 'How do I get started?',

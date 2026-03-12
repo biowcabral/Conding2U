@@ -1,5 +1,4 @@
 import { VariantProvider } from '../components/VariantProvider';
-import VariantSwitcher from '../components/VariantSwitcher';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import SloganMorph from '../components/SloganMorph';
@@ -46,7 +45,6 @@ function PageContent() {
       <FinalCTA />
       <Footer />
       <ChatWidget />
-      <VariantSwitcher />
     </main>
   );
 }

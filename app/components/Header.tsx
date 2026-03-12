@@ -90,7 +90,7 @@ export default function Header() {
           </div>
           </>
           <span className={`hidden sm:inline text-xs font-medium px-2 py-0.5 rounded-full ${variant.badgeBg} ${variant.badgeText}`}>
-            Landing Pages
+            Customer Acquisition Pages
           </span>
         </div>
 
@@ -98,7 +98,6 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {[
             { label: 'How it works', href: '#how-it-works', external: false },
-            { label: 'Portfolio', href: '/portfolio-site/', external: true },
             { label: 'Testimonials', href: '#testimonials', external: false },
             { label: 'Pricing', href: '#pricing', external: false },
           ].map(({ label, href, external }) => (
