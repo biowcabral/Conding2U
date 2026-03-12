@@ -137,21 +137,6 @@ export default function FinalCTA() {
               />
             </div>
             <div>
-              <label htmlFor="cf-service" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Which service?</label>
-              <select
-                id="cf-service"
-                name="service"
-                required
-                defaultValue=""
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white text-sm focus:outline-none focus:border-white/30 transition-colors"
-              >
-                <option value="" disabled className="text-black">Select...</option>
-                <option value="lp" className="text-black">Customer Acquisition Page</option>
-                <option value="lp-multi" className="text-black">Multiple Acquisition Pages</option>
-                <option value="custom" className="text-black">Custom Web Project</option>
-              </select>
-            </div>
-            <div>
               <label htmlFor="cf-message" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Tell us about your project</label>
               <textarea
                 id="cf-message"
