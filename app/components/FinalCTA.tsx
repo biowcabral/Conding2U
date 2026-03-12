@@ -20,7 +20,6 @@ export default function FinalCTA() {
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      service: (form.elements.namedItem('service') as HTMLSelectElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
     };
     console.log('Form submitted:', data);
