@@ -29,6 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+        <script src="https://t.contentsquare.net/uxa/fec60b06c70c7.js" />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
       </body>

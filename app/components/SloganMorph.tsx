@@ -6,9 +6,13 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 // "2u" gets a special accent color, the rest transitions from dim to white
 const WORDS: { text: string; isAccent?: boolean }[] = [
   { text: 'We' },
+  { text: 'are' },
   { text: 'Coding' },
-  { text: '2u', isAccent: true },
-  { text: 'Success.' },
+  { text: 'to' },
+  { text: 'You.' },
+  { text: 'Powering' },
+  { text: 'Your' },
+  { text: 'Success.', isAccent: true },
 ];
 
 const ACCENT = '#F97316'; // orange-500
