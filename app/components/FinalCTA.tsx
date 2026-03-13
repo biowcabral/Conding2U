@@ -20,7 +20,7 @@ export default function FinalCTA() {
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      goal: (form.elements.namedItem('goal') as HTMLTextAreaElement).value,
     };
     console.log('Form submitted:', data);
     setSubmitted(true);
@@ -112,12 +112,12 @@ export default function FinalCTA() {
             <p className="text-white/60 text-sm">We&apos;ll get back to you within 24 hours.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto text-left space-y-4 mb-8">
+          <form onSubmit={handleSubmit} action="{{ route('submit.landingpage') }}" method="POST" className="max-w-md mx-auto text-left space-y-4 mb-8">
             <div>
-              <label htmlFor="cf-name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
+              <label htmlFor="name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
               <input
                 type="text"
-                id="cf-name"
+                id="name"
                 name="name"
                 required
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
@@ -125,10 +125,10 @@ export default function FinalCTA() {
               />
             </div>
             <div>
-              <label htmlFor="cf-email" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your email</label>
+              <label htmlFor="email" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your email</label>
               <input
                 type="email"
-                id="cf-email"
+                id="email"
                 name="email"
                 required
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
@@ -136,10 +136,10 @@ export default function FinalCTA() {
               />
             </div>
             <div>
-              <label htmlFor="cf-message" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Tell us about your project</label>
+              <label htmlFor="goal" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Tell us about your project</label>
               <textarea
-                id="cf-message"
-                name="message"
+                id="goal"
+                name="goal"
                 rows={4}
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors resize-none"
                 placeholder="Describe your project, goals, and any details..."
