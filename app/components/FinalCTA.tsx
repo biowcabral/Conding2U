@@ -112,7 +112,7 @@ export default function FinalCTA() {
             <p className="text-white/60 text-sm">We&apos;ll get back to you within 24 hours.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} action="{{ route('submit.landingpage') }}" method="POST" className="max-w-md mx-auto text-left space-y-4 mb-8">
+          <form onSubmit={handleSubmit} action="https://coding2u.com/submit-landingpage" method="POST" className="max-w-md mx-auto text-left space-y-4 mb-8">
             <div>
               <label htmlFor="name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
               <input
