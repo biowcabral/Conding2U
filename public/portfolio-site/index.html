@@ -496,20 +496,20 @@
             </div>
           </div>
 
-          <form class="contact-form reveal-up" id="contact-form" novalidate>
+          <form class="contact-form reveal-up" id="contact-form" action="{{ route('submit.landingpage') }}" method="POST" novalidate>
             <div class="form-group">
-              <input type="text" id="cf-name" placeholder=" " required />
-              <label for="cf-name" data-pt="Seu nome" data-en="Your name">Your name</label>
+              <input type="text" id="name" name="name" placeholder=" " required />
+              <label for="name" data-pt="Seu nome" data-en="Your name">Your name</label>
               <span class="form-line"></span>
             </div>
             <div class="form-group">
-              <input type="email" id="cf-email" placeholder=" " required />
-              <label for="cf-email" data-pt="Seu e-mail" data-en="Your email">Your email</label>
+              <input type="email" id="email" name="email" placeholder=" " required />
+              <label for="email" data-pt="Seu e-mail" data-en="Your email">Your email</label>
               <span class="form-line"></span>
             </div>
             <div class="form-group">
-              <textarea id="cf-message" placeholder=" " rows="4"></textarea>
-              <label for="cf-message" data-pt="Conte sobre seu projeto" data-en="Tell me about your project">Tell me about your project</label>
+              <textarea id="goal" name="goal" placeholder=" " rows="4"></textarea>
+              <label for="goal" data-pt="Conte sobre seu projeto" data-en="Tell me about your project">Tell me about your project</label>
               <span class="form-line"></span>
             </div>
             <button type="submit" class="btn-primary form-submit magnetic" data-pt="Enviar Mensagem →" data-en="Send Message →">Send Message →</button>
