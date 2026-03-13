@@ -13,17 +13,37 @@ const MICRO_GUARANTEES = [
 export default function FinalCTA() {
   const { variant } = useVariant();
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
     const form = e.currentTarget;
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      goal: (form.elements.namedItem('goal') as HTMLTextAreaElement).value,
+      message: (form.elements.namedItem('goal') as HTMLTextAreaElement).value,
     };
-    console.log('Form submitted:', data);
-    setSubmitted(true);
+
+    try {
+      const res = await fetch('https://coding2u.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send message. Please try again.');
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -112,7 +132,7 @@ export default function FinalCTA() {
             <p className="text-white/60 text-sm">We&apos;ll get back to you within 24 hours.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} action="https://coding2u.com/submit-landingpage" method="POST" className="max-w-md mx-auto text-left space-y-4 mb-8">
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto text-left space-y-4 mb-8">
             <div>
               <label htmlFor="name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
               <input
@@ -120,7 +140,8 @@ export default function FinalCTA() {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
+                disabled={loading}
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
                 placeholder="John Doe"
               />
             </div>
@@ -131,7 +152,8 @@ export default function FinalCTA() {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors"
+                disabled={loading}
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
                 placeholder="john@example.com"
               />
             </div>
@@ -141,15 +163,20 @@ export default function FinalCTA() {
                 id="goal"
                 name="goal"
                 rows={4}
-                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors resize-none"
+                disabled={loading}
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors resize-none disabled:opacity-50"
                 placeholder="Describe your project, goals, and any details..."
               />
             </div>
+            {error && (
+              <p className="text-red-400 text-sm text-center">{error}</p>
+            )}
             <button
               type="submit"
-              className={`w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-black transition-all duration-300 hover:scale-105 shadow-2xl ${variant.btnPrimary} ${variant.btnPrimaryText} ${variant.glowClass}`}
+              disabled={loading}
+              className={`w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-black transition-all duration-300 hover:scale-105 shadow-2xl disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100 ${variant.btnPrimary} ${variant.btnPrimaryText} ${variant.glowClass}`}
             >
-              Send message →
+              {loading ? 'Sending…' : 'Send message →'}
             </button>
           </form>
         )}
