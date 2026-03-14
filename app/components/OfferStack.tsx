@@ -16,8 +16,7 @@ const OFFER_ITEMS = [
 ];
 
 const TOTAL_VALUE = '$8,330';
-const PRICE = '$997 CAD';
-const INSTALLMENTS = '12x $83 CAD';
+
 
 export default function OfferStack() {
   const { variant } = useVariant();
@@ -79,18 +78,13 @@ export default function OfferStack() {
               <span className={`text-base font-black line-through text-red-500`}>{TOTAL_VALUE}</span>
             </div>
             <div
-              className="flex items-center justify-between p-4 rounded-2xl"
+              className="flex items-center justify-center p-4 rounded-2xl"
               style={{ background: `${variant.accentHex}15`, border: `2px solid ${variant.accentHex}` }}
             >
-              <div>
-                <p className={`text-xs font-bold uppercase ${variant.textMuted}`}>Your investment today</p>
-                <p className={`text-3xl font-black mt-1 ${variant.accentText}`}>{PRICE}</p>
-                <p className={`text-xs ${variant.textMuted}`}>or {INSTALLMENTS} on credit card</p>
-              </div>
-              <div className="text-right">
-                <p className="text-xs font-bold text-green-500">You save:</p>
-                <p className="text-lg font-black text-green-500">$7,333</p>
-                <p className="text-xs text-green-600">88% off</p>
+              <div className="text-center">
+                <p className={`text-xs font-bold uppercase ${variant.textMuted}`}>Your investment</p>
+                <p className={`text-xl font-black mt-1 ${variant.accentText}`}>Custom quote — let's talk</p>
+                <p className={`text-xs ${variant.textMuted}`}>Tailored to your business goals</p>
               </div>
             </div>
           </div>
@@ -102,7 +96,7 @@ export default function OfferStack() {
             href="#contact-form"
             className={`inline-flex items-center gap-3 px-8 py-5 rounded-full text-base font-black transition-all duration-300 hover:scale-105 shadow-2xl ${variant.btnPrimary} ${variant.btnPrimaryText} ${variant.glowClass}`}
           >
-            Start my project - $997 CAD →
+            Start my project →
           </a>
           <p className={`text-xs mt-3 ${variant.textMuted}`}>
             🔒 100% secure payment · 30-day guarantee · Delivered in 7 days

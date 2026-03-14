@@ -111,8 +111,8 @@ export default function FinalCTA() {
               <span className="text-white/80 font-bold">7 business days</span>
             </div>
             <div className="border-t border-white/10 pt-3 flex justify-between text-sm">
-              <span className="text-white font-semibold">Starting at</span>
-              <span className="font-black text-base" style={{ color: variant.accentHex }}>$997 CAD</span>
+              <span className="text-white font-semibold">Investment</span>
+              <span className="font-black text-base" style={{ color: variant.accentHex }}>Custom quote</span>
             </div>
           </div>
         </div>

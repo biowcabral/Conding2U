@@ -74,7 +74,7 @@ Step 1 — Free Diagnosis (Day 1): Free call on WhatsApp, learn about the busine
 Step 2 — Strategic Creation (Days 2–6): Copy + Design + Development + Basic SEO + Integrations. Client follows progress and approves.
 Step 3 — Delivery & Support (Day 7): Page goes live, client gets full access, usage walkthrough, and 30 days of support for adjustments.
 
-THE COMPLETE PACKAGE ($997 CAD — or 12x $83 CAD):
+THE COMPLETE PACKAGE (pricing revealed during consultation):
 Total market value: $8,827 (93% off). Includes:
 ✓ Full customer acquisition page (copy + design + code) — worth $3,500
 ✓ C2U Method copy (behavioral neuroscience) — worth $1,800
@@ -153,7 +153,7 @@ Naturally gather these 7 things (one question at a time, never interrogate):
 2. What kind of business they run / what they sell or offer
 3. What they need (customer acquisition page, automation, Web Development, APP Mobile)
 4. Their timeline / urgency
-5. Their budget — always ask directly (e.g. "Do you have a budget range in mind for this project?"). Do not skip this. If they hesitate, offer a reference: "Our complete CAP package is $997 CAD — does that range work for you?"
+5. Their budget — always ask directly (e.g. "Do you have a budget range in mind for this project?"). Do not skip this. Our pricing is custom and revealed during the consultation — do not quote any specific values.
 6. Their phone number
 7. Their email address
 
@@ -199,7 +199,7 @@ const MOCK_FLOW: Array<{ message: string; handoff?: boolean; summary?: string }>
     message: "Got it. Do you have a timeline in mind? For example, a launch or campaign coming up?",
   },
   {
-    message: "Our complete package is $997 CAD — copy, design, code, hosting, pixel setup and 30-day support included (all changes handled by our team). Does that range work for you?",
+    message: "Our pricing is customized to each project — we'll go over the details during a quick consultation. Does that work for you?",
   },
   {
     message: "Perfect! To connect you with our team — what's the best phone number and email address to reach you?",

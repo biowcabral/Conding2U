@@ -29,7 +29,6 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-sm">
             {[
               { label: 'How it works', href: '#how-it-works', external: false },
-              { label: 'Pricing', href: '#pricing', external: false },
             ].map(({ label, href, external }) => (
               <a
                 key={href}

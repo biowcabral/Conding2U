@@ -99,7 +99,6 @@ export default function Header() {
           {[
             { label: 'How it works', href: '#how-it-works', external: false },
             { label: 'Testimonials', href: '#testimonials', external: false },
-            { label: 'Pricing', href: '#pricing', external: false },
           ].map(({ label, href, external }) => (
             <a
               key={href}
