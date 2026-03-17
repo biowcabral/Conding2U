@@ -41,10 +41,11 @@ export default function FinalCTA() {
       message: (form.elements.namedItem('goal') as HTMLTextAreaElement).value,
       ip: visitorIp,
       location: visitorLocation,
+      website: (form.elements.namedItem('website') as HTMLInputElement).value, // honeypot
     };
 
     try {
-      const res = await fetch('https://coding2u.com/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -152,6 +153,10 @@ export default function FinalCTA() {
             {/* Hidden fields — IP and location collected automatically */}
             <input type="hidden" name="ip" value={visitorIp} />
             <input type="hidden" name="location" value={visitorLocation} />
+            {/* Honeypot — hidden from real users, bots fill it automatically */}
+            <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
 
             <div>
               <label htmlFor="name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
