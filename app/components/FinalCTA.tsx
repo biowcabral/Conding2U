@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import { useVariant } from './VariantProvider';
 
 const MICRO_GUARANTEES = [
@@ -15,6 +15,19 @@ export default function FinalCTA() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [visitorIp, setVisitorIp] = useState('');
+  const [visitorLocation, setVisitorLocation] = useState('');
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        setVisitorIp(data.ip ?? '');
+        const parts = [data.city, data.region, data.country_name].filter(Boolean);
+        setVisitorLocation(parts.join(', '));
+      })
+      .catch(() => {});
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +37,10 @@ export default function FinalCTA() {
     const data = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       message: (form.elements.namedItem('goal') as HTMLTextAreaElement).value,
+      ip: visitorIp,
+      location: visitorLocation,
     };
 
     try {
@@ -133,6 +149,10 @@ export default function FinalCTA() {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-md mx-auto text-left space-y-4 mb-8">
+            {/* Hidden fields — IP and location collected automatically */}
+            <input type="hidden" name="ip" value={visitorIp} />
+            <input type="hidden" name="location" value={visitorLocation} />
+
             <div>
               <label htmlFor="name" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your name</label>
               <input
@@ -155,6 +175,17 @@ export default function FinalCTA() {
                 disabled={loading}
                 className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
                 placeholder="john@example.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-1">Your phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                disabled={loading}
+                className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-white/30 transition-colors disabled:opacity-50"
+                placeholder="+1 (555) 000-0000"
               />
             </div>
             <div>
